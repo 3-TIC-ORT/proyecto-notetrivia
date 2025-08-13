@@ -1,9 +1,9 @@
 body {
     background-color: grey;
     margin: 0;
-    height: 100vh;
+    height: 300vh;
     height: 100vh; /* altura de la ventana */
-    margin: 0;
+    margin:0;
     display: flex;
     justify-content: center; /* centro horizontal */
     align-items: center;     /* centro vertical */
