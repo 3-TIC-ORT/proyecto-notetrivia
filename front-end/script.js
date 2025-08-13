@@ -1,7 +1,16 @@
-connect2Server(3000)
-let formu = document.getElementById("enviar")
-function guardar(){
-    let password = document.querySelector("#password")
-    let user = document.querySelector("#user")
-}
-formu.addEventListener("click", guardar)
+connect2Server();
+
+function guardar(e) {
+    e.preventDefault();  
+    let password = document.querySelector("#password").value;
+    let user = document.querySelector("#user").value;
+
+    postEvent("registro", { credenciales: password, user }, (data) => {
+        console.log(data);
+        alert(data.mensaje); 
+    });
+}   
+
+let formu = document.getElementById("form"); 
+formu.addEventListener("submit", guardar);
+connect2Server();
