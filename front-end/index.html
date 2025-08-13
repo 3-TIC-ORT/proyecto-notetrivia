@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos.css">
     <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/JZylber/SoqueTIC-Client@v1.4.1/soquetic-client.js"></script>
 </head>
 <body>
     <form id="login">
-        <div id="user">
-            <input type="text">
+        <div>
+            <input type="text" id="user">
             <label for="">correo electronico</label>
         </div>
-        <div id="password">
-            <input type="password">
+        <div>
+            <input type="password" id="password">
             <label for="">contraseña</label>
         </div>
         <button id="loginbtn">Iniciar Sesion</button>
