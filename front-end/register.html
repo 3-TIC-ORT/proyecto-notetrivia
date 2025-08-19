@@ -4,23 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Registro</title>
+    <link rel="stylesheet" href="estilos.css">
 </head>
-<div style="text-align: center;">
 <body>
-    <form id="register">
-        <div id="user">
-            <input type="text">
-            <label for="">correo electronico</label>
-        </div>
-        <div id="password">
-            <input type="password">
-            <label for="">contraseña</label>
-        </div>
-        <button id="registerbtn">registrarme</button>
-    </form>
-    <p> ya tengo cuenta <a href="index.html">inicia sesion</a></p>   
-</div> 
+    <div class="form-container">
+        <h2>welcome!</h2>
+        <form id="register">
+            <div class="input-group">
+                <span class="icon">👤</span>
+                <input type="text" required>
+                <label>Username or mail</label>
+            </div>
+            <div class="input-group">
+                <span class="icon">🔒</span>
+                <input type="password" required>
+                <label>Password</label>
+            </div>
+            <div class="input-group">
+                <span class="icon">🔒</span>
+                <input type="password" required>
+                <label>Password confirmation</label>
+            </div>
+            <button id="registerbtn" type="submit">Registrarme</button>
+        </form>
+        <p>Ya tengo cuenta <a href="index.html">Iniciar sesión</a></p>
+    </div>
+
+    <!-- Nubes -->
+    <img src="Group 1.png" id="miImagen" alt="Nube derecha">
+    <img src="Group 2.png" id="miImagen2" alt="Nube izquierda">
 </body>
 </html>
-  
