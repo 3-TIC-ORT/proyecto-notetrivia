@@ -32,4 +32,11 @@ body { background-color: grey;
         background-color: darkgray; /* color del rectángulo */
         border-radius: 10px;        /* opcional: esquinas redondeadas */
       }
+      body {
+        display: flex;
+        justify-content: center; /* centra horizontal */
+        align-items: center;     /* centra vertical */
+        height: 100vh;           /* ocupa toda la pantalla */
+        margin: 0;
+      }
       
