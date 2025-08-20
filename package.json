@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "este proyecto mediante un sistema automatico te permite crear salas compartidas con un editor de texto completo de la manera mas facil y accesible ademas ofrece un boton para crear un juego de trivia sobre lo que estas escribiendo y de manera opcional devolverte una devolucion sobre si te conviene estudiar mas o menos",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +20,7 @@
   "homepage": "https://github.com/3-TIC-ORT/proyecto-notetrivia#readme",
   "dependencies": {
     "bcryptjs": "^3.0.2",
+    "cohere-ai": "^7.18.1",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",

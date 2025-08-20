@@ -30,4 +30,5 @@ subscribePOSTEvent("registro", (data) => {
     return { ok: true, mensaje: "Usuario registrado correctamente" };
 });
 
+
 startServer();
