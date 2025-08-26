@@ -1,0 +1,10 @@
+#rectangulo {
+    width: 400px;
+    height: 1000px;
+    background-color: grey;
+}
+#grisarriba {
+    width: 1000px;
+    height: 200px;
+    background-color: grey;
+}
