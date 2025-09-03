@@ -8,14 +8,37 @@
 
 </head>
 
-    <body style= "background-color: White;"></body>  
+    <body style= "background-color: White;">
     <div id="barramenu">
         <div class="menu-icon" aria-label="menu" role="button" tabindex="0">
             <div></div>
             <div></div>
             <div></div>
           </div>
+          <ul id="menu-visible">
+            <li>Inicio</li>
+            <li>Folders</li>
+            <li>Favourites</li>
+            <li>Created by me</li>
+            <li>Bin</li>
+            <li>Mi perfil</li>
+            <li>Settings</li>
+          </ul>
     </div>
     
 </body>
 </html>
+<script>
+    // 1️⃣ Agarramos el contenedor del menú
+    const menu = document.getElementById("barramenu");
+  
+    // 2️⃣ Agarramos el icono de las tres barritas
+    const icon = menu.querySelector(".menu-icon");
+  
+    // 3️⃣ Cuando alguien haga click en el icono
+    icon.addEventListener("click", () => {
+      // 4️⃣ Alternamos la clase "menu-visible" en el contenedor
+      menu.classList.toggle("menu-visible");
+    });
+  </script>
+  

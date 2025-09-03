@@ -14,3 +14,4 @@ function guardar(e) {
 let formu = document.getElementById("form"); 
 formu.addEventListener("submit", guardar);
 connect2Server();
+
