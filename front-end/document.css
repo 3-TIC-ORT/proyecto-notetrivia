@@ -25,3 +25,10 @@ border-radius: 2px;
 #barramenu.menu-visible ul {
     display: block;
 }
+
+.pantalla {
+    display: none;
+}
+.pantalla.activa {
+    display: block;
+}
