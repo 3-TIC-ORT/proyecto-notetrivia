@@ -51,7 +51,14 @@
       menu.classList.toggle("menu-visible");
     });
 
-    con
+    const botones = document.querySelectorAll("#menu-visible li")
+    const pantallas = document.querySelectorAll(".pantallas");
+
+    botones.forEach(boton=> {
+      boton.addEventListener ("click", () => {
+        pantallas.forEach (p => p.classList.remove("activa"));
+      })
+    })
   </script>
 
   
