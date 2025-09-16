@@ -16,11 +16,11 @@
             <div></div>
           </div>
           <ul id="menu-visible">
-            <li data-pantalla ="Inicio"> Inicio</li>
-            <li data-pantalla ="Folders">Folders</li>
+            <li data-pantalla ="inicio"> Inicio</li>
+            <li data-pantalla ="folders">Folders</li>
             <li data-pantalla = "favourites">Favourites</li>
             <li data-pantalla = "created">Created by me</li>
-            <li data-pantalla = "Bin"> Bin</li>
+            <li data-pantalla = "bin"> Bin</li>
             <li data-pantalla = "perfil">Mi perfil</li>
             <li data-pantalla = "settings">Settings</li>
           </ul>
@@ -28,37 +28,38 @@
     
     <div id = "pantallas">
       <div id ="inicio" class="pantalla activa"> </div>
-      <div id ="Folders" class="pantalla"></div>
-      <div id="Favourites" class="pantalla"></div>
-      <div id="Created by me" class="pantalla"></div>
-      <div id="Bin" class="pantalla"></div>
-      <div id="Mi perfil" class="pantalla"></div>
-      <div id="Settings" class="pantalla"></div>
+      <div id ="folders" class="pantalla"></div>
+      <div id="favourites" class="pantalla"></div>
+      <div id="created" class="pantalla"></div>
+      <div id="bin" class="pantalla"></div>
+      <div id="perfil" class="pantalla"></div>
+      <div id="settings" class="pantalla"></div>
 
     </div>
 </body>
 </html>
 <script>
-    // 1️⃣ Agarramos el contenedor del menú
-    const menu = document.getElementById("barramenu");
-  
-    // 2️⃣ Agarramos el icono de las tres barritas
-    const icon = menu.querySelector(".menu-icon");
-  
-    // 3️⃣ Cuando alguien haga click en el 7icono
-    icon.addEventListener("click", () => {
-      // 4️⃣ Alternamos la clase "menu-visible" en el contenedor
-      menu.classList.toggle("menu-visible");
+    
+const menu = document.getElementById("barramenu");
+const icon = menu.querySelector(".menu-icon");
+
+icon.addEventListener("click", () => {
+    menu.classList.toggle("menu-visible");
+});
+
+
+const botones = document.querySelectorAll("#menu-visible li");
+const pantallas = document.querySelectorAll(".pantalla");
+
+botones.forEach(boton => {
+    boton.addEventListener("click", () => {
+        pantallas.forEach(p => p.classList.remove("activa"));
+        const id = boton.dataset.pantalla;
+        const target = document.getElementById(id);
+        if (target) target.classList.add("activa");
     });
-
-    const botones = document.querySelectorAll("#menu-visible li")
-    const pantallas = document.querySelectorAll(".pantallas");
-
-    botones.forEach(boton=> {
-      boton.addEventListener ("click", () => {
-        pantallas.forEach (p => p.classList.remove("activa"));
-      })
-    })
+});
   </script>
 
+  
   
