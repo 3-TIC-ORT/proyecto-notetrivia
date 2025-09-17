@@ -1,4 +1,4 @@
-connect2Server();
+
 
 function guardar(e) {
     e.preventDefault();  
