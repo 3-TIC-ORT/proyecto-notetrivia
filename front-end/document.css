@@ -63,3 +63,12 @@ border-radius: 2px;
 #settings {
     background-color: red
 }
+#menu-visible {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+#menu-visible li[data-pantalla= "perfil"],
+#menu-visible li[data-pantalla= "settings"]{
+    margin-top: auto;
+}
