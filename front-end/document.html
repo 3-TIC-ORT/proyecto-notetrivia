@@ -1,12 +1,19 @@
-<!DOCTYPE html>
+<!  DOCTYP<E html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="document.css" />
+     <style>
+          .btn-unirse {
+          margin-top: 50px;
+          }
+        </style>
+
 
 </head>
+
 
     <body style= "background-color: White;">
     <div id="barramenu">
@@ -17,19 +24,35 @@
           </div>
           <ul id="menu-visible">
             <li data-pantalla ="inicio"> Inicio</li>
+            <li data-pantalla ="new">New</li>
             <li data-pantalla ="folders">Folders</li>
             <li data-pantalla = "favourites">Favourites</li>
             <li data-pantalla = "created">Created by me</li>
             <li data-pantalla = "bin"> Bin</li>
+            <li data-pantalla="sharewithme">Share with me</li>
+          </ul>
+          <ul id="menu-bottom">
             <li data-pantalla = "perfil">Mi perfil</li>
             <li data-pantalla = "settings">Settings</li>
+
           </ul>
     </div>
-    
+   
     <div id = "pantallas">
       <div id ="inicio" class="pantalla activa">
         <button class="btn-unirse">Unirse</button>
+        <input type="text" id="ingresarsala" placeholder="Ingresa el codigo de sala" style="display: none;">
+        <div class="search-box">
+          <form method="get" id="search-form">
+             <fieldset>
+                <input type="text" id="search-input" placeholder="Buscar"  />
+                <input class="search-button" type="submit" value="Buscar" />
+                <i class="search-icon"></i>
+             </fieldset>
+          </form>
        </div>
+       </div>
+      <div id ="sharewithme" class="pantalla"></div>
       <div id ="folders" class="pantalla"></div>
       <div id="favourites" class="pantalla"></div>
       <div id="created" class="pantalla"></div>
@@ -37,31 +60,28 @@
       <div id="perfil" class="pantalla"></div>
       <div id="settings" class="pantalla"></div>
 
+
     </div>
 </body>
 </html>
 <script>
-    
-const menu = document.getElementById("barramenu");
-const icon = menu.querySelector(".menu-icon");
-
-icon.addEventListener("click", () => {
-    menu.classList.toggle("menu-visible");
-});
-
-
-const botones = document.querySelectorAll("#menu-visible li");
-const pantallas = document.querySelectorAll(".pantalla");
-
-botones.forEach(boton => {
-    boton.addEventListener("click", () => {
-        pantallas.forEach(p => p.classList.remove("activa"));
-        const id = boton.dataset.pantalla;
-        const target = document.getElementById(id);
-        if (target) target.classList.add("activa");
+    const botones = document.querySelectorAll("#menu-visible li");
+    const pantallas = document.querySelectorAll(".pantalla");
+    botones.forEach(boton => {
+        boton.addEventListener("click", () => {
+            pantallas.forEach(p => p.classList.remove("activa"));
+            const id = boton.dataset.pantalla;
+            const target = document.getElementById(id);
+            if (target) target.classList.add("activa");
+        });
     });
-});
-  </script>
+    const botonUnirse = document.querySelector('.btn-unirse');
+    const inputSala = document.getElementById('ingresarsala');
+    botonUnirse.onclick = function() {
+        inputSala.style.display = 'block';
+    };
+</script>
 
-  
-  
+
+ 
+ 
