@@ -18,7 +18,9 @@
     <body style= "background-color: White;">
     <div id="barramenu">
         <div class="menu-icon" aria-label="menu" role="button" tabindex="0">
-            <div></div>
+            <div class="new">
+              <img src="../IMGS/Vector.png" alt="mas">
+            </div>
             <div></div>
             <div></div>
           </div>
@@ -65,7 +67,7 @@
 </body>
 </html>
 <script>
-    const botones = document.querySelectorAll("#menu-visible li");
+    const botones = document.querySelectorAll("#menu-visible li, #menu-bottom li");
     const pantallas = document.querySelectorAll(".pantalla");
     botones.forEach(boton => {
         boton.addEventListener("click", () => {
