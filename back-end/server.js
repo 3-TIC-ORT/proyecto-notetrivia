@@ -16,8 +16,9 @@ const io = new Server(server, {
 
 app.use(express.static(path.join(__dirname, "..", "front-end")));
 
-let usuarios = JSON.parse(fs.readFileSync("usuarios.json"));
 
+let usuarios = JSON.parse(fs.readFileSync("usuarios.json"));
+let documento = "";
 io.on("connection", (socket) => {
   console.log("papu conectado");
 
@@ -46,8 +47,13 @@ io.on("connection", (socket) => {
       socket.emit("login-exito", { mensaje: "Login exitoso" });
     }
 });
+socket.emit("cargar", documento);
+    socket.on("editarDocumento", (data) => {
+      documento = data;
+      socket.broadcast.emit("actualizar", data);
     });
-
+    });
+    
 server.listen(3000, () => {
   console.log("Servidor corriendo en http://localhost:3000");
 });
