@@ -42,8 +42,6 @@
    
     <div id = "pantallas">
       <div id ="inicio" class="pantalla activa">
-        <button class="btn-unirse">Unirse</button>
-        <input type="text" id="ingresarsala" placeholder="Ingresa el codigo de sala" style="display: none;">
         <div class="search-box">
           <form method="get" id="search-form">
              <fieldset>
@@ -54,6 +52,14 @@
           </form>
        </div>
        </div>
+       <div id=" new" class=" pantalla"></div>
+       <div id="unirse/crear" class="oculto"></div>
+       <button id="btn-unirse-codigo">Unirse con un código</button>
+       <display: none;></display:>
+       <button id="btn-crear-proyecto">Crear nuevo proyecto</button>
+       <display: none;></display:>
+   </div>
+ </div>
       <div id ="sharewithme" class="pantalla"></div>
       <div id ="folders" class="pantalla"></div>
       <div id="favourites" class="pantalla"></div>
@@ -82,6 +88,10 @@
     botonUnirse.onclick = function() {
         inputSala.style.display = 'block';
     };
+    document.getElementById(" new").addEventListener("click", function() {
+  var divAMostrar = document.getElementById("btn-unirse-codigo");
+  divAMostrar.style.display = "block";
+});
 </script>
 
 
