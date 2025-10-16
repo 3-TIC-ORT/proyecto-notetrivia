@@ -42,7 +42,7 @@
         { "texto": "El Consulado, con Napoleón como Primer Cónsul", "correcta": true },
         { "texto": "La Restauración de la Monarquía", "correcta": false },
         { "texto": "La Segunda República", "correcta": false },
-        { "texto": "El Imperio Napoleónico", "correcta": false }
+        { "texto": "El Imperio Napoleónio", "correcta": false }
       ]
     }
   ]
