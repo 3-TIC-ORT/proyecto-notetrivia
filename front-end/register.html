@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
     <link rel="stylesheet" href="estilos.css">
+     <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
 </head>
 <body>
     <!-- Nubes -->
@@ -17,19 +18,20 @@
             <form id="register">
                 <div class="input-group">
                     <img src = "../IMGS/Perfil.png" class = "perfil">
-                    <input type="text" required placeholder= "Username or mail">
+                    <input type="text" required placeholder= "Username or mail" id="username"> 
                    
 
                 
                 </div>
                 <div class="input-group">
                     <img src = "../IMGS/candado.png" class="candado">
-                    <input type="password" required placeholder= "Password">
+                    <input type="password" required placeholder= "Password"  id="password">
+                    >
                     
                 </div>
                 <div class="input-group">
                     <img src = "../IMGS/candado (1).png" class=" candado1">
-                    <input type="password" required placeholder= "Password confirmation">
+                    <input type="password" required placeholder= "Password confirmation" id="password2">
                     
                 </div>
                 <button id="registerbtn" type="submit">Registrarme</button>
@@ -39,5 +41,5 @@
         </div> 
 
         </div>
-
+        <script src="register.js"></script>
 </body>

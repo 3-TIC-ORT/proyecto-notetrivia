@@ -10,7 +10,7 @@
           margin-top: 50px;
           }
         </style>
-
+       <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
 
 </head>
 
@@ -44,6 +44,7 @@
       <div id ="inicio" class="pantalla activa">
         <button class="btn-unirse">Unirse</button>
         <input type="text" id="ingresarsala" placeholder="Ingresa el codigo de sala" style="display: none;">
+        <button id="boton-jose">unirse a la sala</button>
         <div class="search-box">
           <form method="get" id="search-form">
              <fieldset>
@@ -64,25 +65,10 @@
 
 
     </div>
+    <script src="scriptrealtime.js"></script>
 </body>
 </html>
-<script>
-    const botones = document.querySelectorAll("#menu-visible li, #menu-bottom li");
-    const pantallas = document.querySelectorAll(".pantalla");
-    botones.forEach(boton => {
-        boton.addEventListener("click", () => {
-            pantallas.forEach(p => p.classList.remove("activa"));
-            const id = boton.dataset.pantalla;
-            const target = document.getElementById(id);
-            if (target) target.classList.add("activa");
-        });
-    });
-    const botonUnirse = document.querySelector('.btn-unirse');
-    const inputSala = document.getElementById('ingresarsala');
-    botonUnirse.onclick = function() {
-        inputSala.style.display = 'block';
-    };
-</script>
+
 
 
  

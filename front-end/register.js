@@ -1,10 +1,10 @@
 const socket = io("http://localhost:3000");
-let formu = document.getElementById("form"); 
+let formu = document.getElementById("register"); 
 formu.addEventListener("submit", guardar);
 function guardar(e) {
     e.preventDefault();  
-    let password = document.querySelector("#password").value;
-    let user = document.querySelector("#user").value;
+    let password = document.getElementById("password").value;
+    let user = document.getElementById("username").value;
     socket.emit("registro", {user, password});
 }
 socket.on("registro-exito", (data) => {
