@@ -1,3 +1,27 @@
 {
-  "jose": "jose"
+  "12343456": {
+    "id": 1,
+    "password": "123153151",
+    "username": "12343456"
+  },
+  "123434566": {
+    "id": 2,
+    "password": "123153151",
+    "username": "123434566"
+  },
+  "cocobarce": {
+    "id": 3,
+    "password": "123446",
+    "username": "cocobarce"
+  },
+  "perroperrisimo": {
+    "id": 4,
+    "password": "elperro",
+    "username": "perroperrisimo"
+  },
+  "cocobarce2": {
+    "id": 5,
+    "password": "123456",
+    "username": "cocobarce2"
+  }
 }

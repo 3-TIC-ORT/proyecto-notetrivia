@@ -10,7 +10,7 @@
           margin-top: 50px;
           }
         </style>
-
+       <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
 
 </head>
 
@@ -42,6 +42,9 @@
    
     <div id = "pantallas">
       <div id ="inicio" class="pantalla activa">
+        <button class="btn-unirse">Unirse</button>
+        <input type="text" id="ingresarsala" placeholder="Ingresa el codigo de sala" style="display: none;">
+        <button id="boton-jose">unirse a la sala</button>
         <div class="search-box">
           <form method="get" id="search-form">
              <fieldset>
@@ -70,6 +73,7 @@
 
 
     </div>
+    <script src="scriptrealtime.js"></script>
 </body>
 </html>
 <script>
