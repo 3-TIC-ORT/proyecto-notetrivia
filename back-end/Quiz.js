@@ -1,5 +1,6 @@
 import { CohereClientV2 } from 'cohere-ai';
 import 'dotenv/config';
+import fs from 'fs';
 
 const cohere = new CohereClientV2({
   token: process.env.API,
@@ -35,8 +36,10 @@ async function main() {
     });
 
     
-    const content = response.message?.content || response.message?.text || JSON.stringify(response);
-
+  const content = response.message.content[0].text;
+  fs.writeFileSync('Quiz.json', content);
+  JSON.stringify(fs.readFileSync('Quiz.json', 'utf-8'));
+  console.log(trivia[1])
     console.log('Respuesta de Cohere:', content);
   } catch (error) {
     console.error('Error:', error);
