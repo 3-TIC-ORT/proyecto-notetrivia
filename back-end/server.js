@@ -18,7 +18,11 @@ app.use(express.static(path.join(__dirname, "..", "front-end")));
 
 
 let usuarios = JSON.parse(fs.readFileSync("usuarios.json"));
-let documento = "";
+    let rooms = {}
+    rooms = JSON.parse(fs.readFileSync("rooms.json","utf-8"))
+    function guardar(){
+      fs.writeFileSync("rooms.json", JSON.stringify(rooms, null, 2))
+    }
 io.on("connection", (socket) => {
   console.log("papu conectado");
 
@@ -32,7 +36,6 @@ io.on("connection", (socket) => {
     } else {
       usuarios[data.user] = data.password;
       socket.emit("registro-exito", { mensaje: "Usuario registrado con éxito" });
-      console.log(usuarios)
       fs.writeFileSync("usuarios.json", JSON.stringify(usuarios, null, 2));
     }
   });
@@ -47,11 +50,6 @@ io.on("connection", (socket) => {
       socket.emit("login-exito", { mensaje: "Login exitoso" });
     }
 });
-socket.emit("cargar", documento);
-    socket.on("editarDocumento", (data) => {
-      documento = data;
-      socket.broadcast.emit("actualizar", data);
-    });
     });
     
 server.listen(3000, () => {
