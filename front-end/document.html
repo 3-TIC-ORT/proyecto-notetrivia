@@ -55,12 +55,10 @@
           </form>
        </div>
        </div>
-       <div id=" new" class=" pantalla"></div>
+       <div id="new" class="pantalla"></div>
        <div id="unirse/crear" class="oculto"></div>
        <button id="btn-unirse-codigo">Unirse con un código</button>
-       <display: none;></display:>
        <button id="btn-crear-proyecto">Crear nuevo proyecto</button>
-       <display: none;></display:>
    </div>
  </div>
       <div id ="sharewithme" class="pantalla"></div>
@@ -97,6 +95,23 @@
   var divAMostrar = document.getElementById("btn-unirse-codigo");
   divAMostrar.style.display = "block";
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const btnCrear = document.getElementById('btn-crear-proyecto')
+    const btnCodigo = document.getElementById('btn-unirse-codigo')
+
+    btnCrear.addEventListener('click', () => {
+           console.log('Se apretó Crear nuevo proyecto')
+
+      // Por ejemplo, podés ocultar los botones:
+      btnCrear.style.display = 'none'
+      btnCodigo.style.display = 'none'
+
+      // 🔹 Y acá hacés todo lo de TipTap o lo que quieras mostrar
+      // Ejemplo:
+      // mostrarEditor()
+      // o tu código TipTap directamente
+    })
+  })
 </script>
 
 
