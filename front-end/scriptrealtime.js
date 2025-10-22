@@ -21,3 +21,6 @@
         const sala = input.value;
         socket.emit("unirse-sala", { room: sala });
     }
+
+
+    

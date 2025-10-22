@@ -26,7 +26,7 @@
           </div>
           <ul id="menu-visible">
             <li data-pantalla ="inicio"> Inicio</li>
-            <li data-pantalla ="new">New</li>
+            <li data-pantalla ="new" id="new">New</li>
             <li data-pantalla ="folders">Folders</li>
             <li data-pantalla = "favourites">Favourites</li>
             <li data-pantalla = "created">Created by me</li>
@@ -73,9 +73,10 @@
 
 
     </div>
-    <script src="scriptrealtime.js"></script>
+    <script src="scriptr ealtime.js"></script>
 </body>
 </html>
+
 <script>
     const botones = document.querySelectorAll("#menu-visible li, #menu-bottom li");
     const pantallas = document.querySelectorAll(".pantalla");
@@ -98,6 +99,17 @@
 });
 </script>
 
+
+<div class="element"></div>
+<script type="module">
+  import { Editor } from 'https://esm.sh/@tiptap/core'
+  import StarterKit from 'https://esm.sh/@tiptap/starter-kit'
+  const editor = new Editor({
+    element: document.querySelector('.element'),
+    extensions: [StarterKit],
+    content: '<p>Hello World!</p>',
+  })
+</script>
 
  
  

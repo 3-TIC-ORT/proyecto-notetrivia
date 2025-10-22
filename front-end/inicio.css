@@ -1,10 +1,16 @@
-#rectangulo {
-    width: 400px;
-    height: 1000px;
-    background-color: grey;
+body {
+    background-color: #FFDD95;
 }
-#grisarriba {
-    width: 1000px;
-    height: 200px;
-    background-color: grey;
+.mi-contenedor {
+    width: 900px;
+    background-color: #86E3CE;
+    height: 500px;
+    margin: 10px; 
+    padding: 20px;
+    border-radius: 60px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 }
