@@ -8,16 +8,3 @@
             if (target) target.classList.add("activa");
         });
     });
-    const botonUnirse = document.querySelector('.btn-unirse');
-    const inputSala = document.getElementById('ingresarsala');
-    botonUnirse.onclick = function() {
-        inputSala.style.display = 'block';
-    };
-    const socket = io();
-    let input = document.getElementById("ingresarsala");
-    let boton = document.getElementById("boton-jose");
-    boton.addEventListener("click", enviar)
-    function enviar() {
-        const sala = input.value;
-        socket.emit("unirse-sala", { room: sala });
-    }

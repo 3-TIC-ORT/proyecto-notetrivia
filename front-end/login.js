@@ -9,7 +9,13 @@ function guardar(e) {
 }
 socket.on("login-exito", (data) => {
     alert(data.mensaje);
-    window.location.href = "inicio.html";
+    window.location.href = "ingresos.html";
+    const userInput = document.querySelector("#user")?.value || document.querySelector("input[name='user']")?.value;
+    if (userInput) {
+        localStorage.setItem("username", userInput);
+    } else if (data && data.username) {
+        localStorage.setItem("username", data.username);
+    }
 });
 socket.on("login-error", (data) => {
     alert(data.mensaje);
