@@ -23,5 +23,15 @@
     "id": 5,
     "password": "123456",
     "username": "cocobarce2"
+  },
+  "uma": {
+    "id": 6,
+    "password": "umauma",
+    "username": "uma"
+  },
+  "enrique": {
+    "id": 7,
+    "password": "mamerto",
+    "username": "enrique"
   }
 }

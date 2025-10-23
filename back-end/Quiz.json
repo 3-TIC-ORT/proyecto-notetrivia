@@ -1,48 +1,48 @@
 {
   "trivia": [
     {
-      "pregunta": "¿Cuál fue el principal factor que desencadenó la Revolución Francesa?",
+      "pregunta": "¿Cuál es el principal objetivo de la ingeniería genética?",
       "opciones": [
-        { "texto": "La crisis económica y financiera", "correcta": true },
-        { "texto": "La invasión de un país extranjero", "correcta": false },
-        { "texto": "La muerte del rey Luis XVI", "correcta": false },
-        { "texto": "La influencia de la Revolución Industrial", "correcta": false }
+        { "texto": "Modificar el ADN de un organismo para cambiar sus características o agregarle nuevas funciones", "correcta": true },
+        { "texto": "Estudiar la evolución de las especies", "correcta": false },
+        { "texto": "Crear nuevos tipos de energía", "correcta": false },
+        { "texto": "Desarrollar tecnologías de comunicación", "correcta": false }
       ]
     },
     {
-      "pregunta": "¿Qué documento, aprobado en 1789, proclamó los derechos del hombre y del ciudadano?",
+      "pregunta": "¿Qué herramienta se utiliza comúnmente para cortar y unir genes en la ingeniería genética?",
       "opciones": [
-        { "texto": "La Declaración de los Derechos del Hombre y del Ciudadano", "correcta": true },
-        { "texto": "La Constitución de 1791", "correcta": false },
-        { "texto": "El Manifiesto del Rey", "correcta": false },
-        { "texto": "El Código Napoleónico", "correcta": false }
+        { "texto": "Enzimas", "correcta": true },
+        { "texto": "Antibióticos", "correcta": false },
+        { "texto": "Hormonas", "correcta": false },
+        { "texto": "Vacunas", "correcta": false }
       ]
     },
     {
-      "pregunta": "¿Quién fue el líder máximo durante el período del Terror?",
+      "pregunta": "¿Cuál es un ejemplo de aplicación de la ingeniería genética en medicina?",
       "opciones": [
-        { "texto": "Maximilien Robespierre", "correcta": true },
-        { "texto": "Napoleón Bonaparte", "correcta": false },
-        { "texto": "Luis XVI", "correcta": false },
-        { "texto": "Georges Danton", "correcta": false }
+        { "texto": "Producción de insulina", "correcta": true },
+        { "texto": "Desarrollo de teléfonos inteligentes", "correcta": false },
+        { "texto": "Creación de combustibles fósiles", "correcta": false },
+        { "texto": "Fabricación de automóviles", "correcta": false }
       ]
     },
     {
-      "pregunta": "¿Qué evento marcó el fin de la monarquía absoluta en Francia?",
+      "pregunta": "¿Qué tipo de organismos se modifican para producir cultivos resistentes a plagas?",
       "opciones": [
-        { "texto": "La toma de la Bastilla", "correcta": true },
-        { "texto": "La ejecución de Luis XVI", "correcta": false },
-        { "texto": "La proclamación de la Primera República", "correcta": false },
-        { "texto": "El golpe de Estado de Napoleón", "correcta": false }
+        { "texto": "Plantas", "correcta": true },
+        { "texto": "Animales", "correcta": false },
+        { "texto": "Hongos", "correcta": false },
+        { "texto": "Bacterias", "correcta": false }
       ]
     },
     {
-      "pregunta": "¿Qué sistema de gobierno reemplazó al Directorio en 1799?",
+      "pregunta": "¿Cuál es un riesgo potencial de la ingeniería genética mencionado en el texto?",
       "opciones": [
-        { "texto": "El Consulado, con Napoleón como Primer Cónsul", "correcta": true },
-        { "texto": "La Restauración de la Monarquía", "correcta": false },
-        { "texto": "La Segunda República", "correcta": false },
-        { "texto": "El Imperio Napoleónio", "correcta": false }
+        { "texto": "Posibles efectos en el ambiente", "correcta": true },
+        { "texto": "Aumento de la productividad industrial", "correcta": false },
+        { "texto": "Reducción de enfermedades infecciosas", "correcta": false },
+        { "texto": "Mejora de la calidad del aire", "correcta": false }
       ]
     }
   ]

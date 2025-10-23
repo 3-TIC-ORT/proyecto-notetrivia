@@ -4,6 +4,7 @@ import { Server } from "socket.io";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { setupcolaborativo } from "./colaborativo.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -14,15 +15,10 @@ const io = new Server(server, {
   cors: { origin: "*" }
 });
 
+
 app.use(express.static(path.join(__dirname, "..", "front-end")));
 let usuarios = JSON.parse(fs.readFileSync("usuarios.json"));
-let proximoid = Object.values(usuarios).reduce((max, u) => Math.max(max, u.id), 0) + 1;// devuele array de objetos lo recorre acumula y con max usa el mayor entre el acumulado y el id del usuario actual.
-
-    let rooms = {}
-    rooms = JSON.parse(fs.readFileSync("rooms.json","utf-8"))
-    function guardar(){
-      fs.writeFileSync("rooms.json", JSON.stringify(rooms, null, 2))
-    }
+let proximoid = Object.values(usuarios).reduce((max, u) => Math.max(max, u.id), 0) + 1;
 io.on("connection", (socket) => {
   console.log("papu conectado");
   socket.on("registro", (data) => {
@@ -50,10 +46,13 @@ io.on("connection", (socket) => {
     } else if (usuarios[data.user].password !== data.password) {
         socket.emit("login-error", { mensaje: "Contraseña incorrecta" });
         return;
-    } else {
-      socket.emit("login-exito", { mensaje: "Login exitoso" });
+
     }
+      socket.username = usuarios[data.user].username
+      socket.emit("login-exito", { mensaje: "Login exitoso" });
+    
 });
+
     });
     
 server.listen(3000, () => {
