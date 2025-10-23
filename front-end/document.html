@@ -42,9 +42,7 @@
    
     <div id = "pantallas">
       <div id ="inicio" class="pantalla activa">
-        <button class="btn-unirse">Unirse</button>
         <input type="text" id="ingresarsala" placeholder="Ingresa el codigo de sala" style="display: none;">
-        <button id="boton-jose">unirse a la sala</button>
         <div class="search-box">
           <form method="get" id="search-form">
              <fieldset>
@@ -99,18 +97,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnCrear = document.getElementById('btn-crear-proyecto')
     const btnCodigo = document.getElementById('btn-unirse-codigo')
 
-    btnCrear.addEventListener('click', () => {
-           console.log('Se apretó Crear nuevo proyecto')
+    const  button= document.getElementById('btn-crear-proyecto');
+    button = "btn-crear-proyecto".addEventListener('click', function() {
+          button="btn-crear-proyecto".style.display = 'none';
+          button="btn-unirse-codigo".style.display = 'none';
+          
+          
 
-      // Por ejemplo, podés ocultar los botones:
-      btnCrear.style.display = 'none'
-      btnCodigo.style.display = 'none'
-
-      // 🔹 Y acá hacés todo lo de TipTap o lo que quieras mostrar
-      // Ejemplo:
-      // mostrarEditor()
-      // o tu código TipTap directamente
-    })
+          alert('¡Hola!');
+        });
   })
 </script>
 
