@@ -14,7 +14,7 @@ const server = createServer(app);
 const io = new Server(server, {
   cors: { origin: "*" }
 });
-
+  
 
 app.use(express.static(path.join(__dirname, "..", "front-end")));
 let usuarios = JSON.parse(fs.readFileSync("usuarios.json"));
@@ -48,13 +48,19 @@ io.on("connection", (socket) => {
         return;
 
     }
-      socket.username = usuarios[data.user].username
-      socket.emit("login-exito", { mensaje: "Login exitoso" });
+     const userObj = usuarios[data.user]; 
+  socket.username = userObj.username;
+
+  socket.emit("login-exito", { mensaje: "Bienvenido" });
+  socket.emit("userDEV", userObj.username); 
+        
+        
+      
     
 });
 
     });
-    
+setupcolaborativo(io);
 server.listen(3000, () => {
   console.log("Servidor corriendo en http://localhost:3000");
 });

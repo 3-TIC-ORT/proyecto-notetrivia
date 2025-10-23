@@ -26,11 +26,9 @@ export function setupcolaborativo(io) {
   io.on("connection", (socket) => {
     socket.on("unirse", (data) => {
       if (!data || !data.docId) return;
-
       const docId = data.docId;
       const user = data.user;
       socket.join(docId);
-      if (user !== undefined) socket.user = user;
 
       if (!rooms[docId]) rooms[docId] = [];
       if (user !== undefined && !rooms[docId].includes(user)) {
@@ -47,10 +45,9 @@ export function setupcolaborativo(io) {
 
       socket.on("editDocument", (data) => {
         if (!data || !data.docId) return;
-
         const docId = data.docId;
-        const content = data.content || "";
-        const user = data.user || socket.user;
+        const content = data.content;
+        const user = data.user;
 
         const doc = cargarDoc(docId);
         doc.t = content;
@@ -76,8 +73,12 @@ export function setupcolaborativo(io) {
         if (!docId) return;
         if (user === undefined) user = socket.user;
         if (!user || !rooms[docId]) return;
+        const nuevaLista = [];
+        for (let u of rooms[docId]) {
+          if (u !== user) nuevaLista.push(u);
+        }
+        rooms[docId] = nuevaLista;
 
-        rooms[docId] = rooms[docId].filter(u => u !== user);
         if (rooms[docId].length === 0) delete rooms[docId];
 
         socket.leave(docId);
@@ -88,7 +89,11 @@ export function setupcolaborativo(io) {
         if (!sUser) return;
 
         for (let docId in rooms) {
-          rooms[docId] = rooms[docId].filter(u => u !== sUser);
+          const nuevaLista = [];
+          for (let u of rooms[docId]) {
+            if (u !== sUser) nuevaLista.push(u);
+          }
+          rooms[docId] = nuevaLista;
           if (rooms[docId].length === 0) delete rooms[docId];
         }
       });
