@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/3-TIC-ORT/proyecto-notetrivia#readme",
   "dependencies": {
+    "@tiptap/core": "^3.7.2",
+    "@tiptap/pm": "^3.7.2",
+    "@tiptap/starter-kit": "^3.7.2",
     "bcryptjs": "^3.0.2",
     "cohere-ai": "^7.18.1",
     "cors": "^2.8.5",
