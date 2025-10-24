@@ -60,43 +60,6 @@ export function setupcolaborativo(io) {
         socket.to(docId).emit("updateDocument", content);
         socket.emit("loadDocument", doc.t);
       });
-
-      socket.on("salir", (arg1, arg2) => {
-        let docId, user;
-        if (arg1 && arg1.docId) {
-          docId = arg1.docId;
-          user = arg1.user;
-        } else {
-          docId = arg1;
-          user = arg2;
-        }
-        if (!docId) return;
-        if (user === undefined) user = socket.user;
-        if (!user || !rooms[docId]) return;
-        const nuevaLista = [];
-        for (let u of rooms[docId]) {
-          if (u !== user) nuevaLista.push(u);
-        }
-        rooms[docId] = nuevaLista;
-
-        if (rooms[docId].length === 0) delete rooms[docId];
-
-        socket.leave(docId);
-      });
-
-      socket.on("disconnect", () => {
-        const sUser = socket.user;
-        if (!sUser) return;
-
-        for (let docId in rooms) {
-          const nuevaLista = [];
-          for (let u of rooms[docId]) {
-            if (u !== sUser) nuevaLista.push(u);
-          }
-          rooms[docId] = nuevaLista;
-          if (rooms[docId].length === 0) delete rooms[docId];
-        }
-      });
     });
   });
 }
