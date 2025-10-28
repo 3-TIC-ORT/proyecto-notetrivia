@@ -1,36 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.8.1/socket.io.js"></script>
-    <link rel="stylesheet" href="inicio.css">
-    <title>Document</title>
-     <link rel="icon" type="image/png" href="./IMGS/Litnoote.png" />
-
-
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iniciar sesión</title>
+  <link rel="stylesheet" href="iniciosesion.css">
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
 </head>
 <body>
-  <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-.mi-contenedor h2 {
-          color: #985CF9;
-        }
-        </style>
-     
-     <div class="mi-contenedor">
-    <img src="../IMGS/Litnoote.png" alt="Logo" class="logo">
-    <p>Una innovación para el estudio práctico</p>
+  <!-- Nubes -->
+  <img src="../IMGS/Group 1.png" id="nubeIzquierda" alt="Nube izquierda">
+  <img src="../IMGS/Group 2.png" id="nubeDerecha" alt="Nube derecha">
 
+  <!-- Contenedor principal -->
+  <div id="rectangulo">
+    <h1 class="titulo">Bienvenido de nuevo!</h1>
+    <form id="iniciosesion">
+      <div class="input-group">
+        <img src="../IMGS/Perfil.png" class="icono">
+        <input type="text" required placeholder="Username or mail" id="username">
+      </div>
 
-    <!-- NUEVO WRAPPER PARA BOTONES -->
-    <div class="botones-wrapper">
-        <button class="boton-inicio">Iniciar sesion</button>
-        <button class="boton-inicio">Crear cuenta</button>
-    </div>
-</div>
+      <div class="input-group">
+        <img src="../IMGS/candado.png" class="icono">
+        <input type="password" required placeholder="Password" id="password">
+      </div>
+
+      <button id="sesionbtn" type="submit">Iniciar Sesión</button>
+    </form>
+  </div>
+
+  <script src="iniciosesion.js"></script>
 </body>
 </html>

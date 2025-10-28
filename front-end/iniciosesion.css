@@ -1,48 +1,89 @@
-:body { background-color: grey;
+body {
+  background-color: #FFDD95;
   margin: 0;
-  height: 100vh; /* altura de la ventana */
-  margin:0;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Nubes */
+#nubeIzquierda, #nubeDerecha {
+  position: fixed;
+  width: 220px;        /* mismo tamaño para ambas */
+  height: auto;
+  filter: brightness(0) invert(1); /* las vuelve blancas */
+  z-index: 1;
+}
+
+#nubeIzquierda {
+  bottom: 0;
+  left: 0;
+}
+
+#nubeDerecha {
+  top: 0;
+  right: 0;
+}
+
+/* Cuadro central */
+#rectangulo {
+  width: 340px;
+  height: 380px; /* Reducido el tamaño de la altura */
+  background-color: #86E3CE;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  padding-top: 30px;
+}
+
+/* Título */
+.titulo {
+  font-size: 28px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 25px;
+}
+
+/* Inputs */
+.input-group {
   display: flex;
-  justify-content: center; /* centro horizontal */
-  align-items: center; /* centro vertical */ }
-#miImagen1 { position: fixed;
-  top: 0px;
-  right: 0px;
-  width: 100px;
-   height: auto;
-   z-index: 1000; }
-#miImagen2 { position: fixed;
-  bottom: 0px; /* 10 píxeles desde abajo */
-  left: 0px; /* 10 píxeles desde la izquierda */
-   width: 100px;
-   height: auto;
-      z-index: 1000; }
-      body {
-        margin: 0;
-        height: 100vh; /* ocupa toda la pantalla */
-        display: flex;
-        justify-content: center; /* centro horizontal */
-        align-items: center;     /* centro vertical */
-        background-color: grey;  /* opcional: color de fondo */
-      }
-     
-      #rectangulo {
-        width: 300px;
-        height: 400px;
-        background-color: darkgray; /* color del rectángulo */
-        border-radius: 10px;        /* opcional: esquinas redondeadas */
-      }
-      body {
-        display: flex;
-        justify-content: center; /* centra horizontal */
-        align-items: center;     /* centra vertical */
-        height: 100vh;           /* ocupa toda la pantalla */
-        margin: 0;
-      }
-      .perfil{
-        size: 32px;
-      }
-     
-     
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
 
+.icono {
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+}
 
+input {
+  width: 180px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+}
+
+/* Botón */
+#sesionbtn {
+  background-color: #FA897B;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+#sesionbtn:hover {
+  background-color: #f76c5e;
+}
