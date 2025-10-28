@@ -1,56 +1,49 @@
 body {
-    margin: 0;
-    background-color: #f7d58b;
-    font-family: Arial, sans-serif;
-  }
-  
-  .mi-contenedor {
-    background-color: #87dfd6;
-    width: 50%;
-    margin: 100px auto;
-    padding: 40px;
-    border-radius: 50px;
-    text-align: center;
-  }
-  
-  .titulo {
-    font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .titulo .n {
-    color: #4b00ff;
-    font-weight: bold;
-  }
-  
-  .titulo .o {
-    color: #4b00ff;
-  }
-  
-  .titulo .ote {
-    color: #9e66ff;
-  }
-  
-  .btn {
-    display: block;
-    width: 150px;
-    margin: 10px auto;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #ff7b73;
-    color: white;
-    font-size: 15px;
-    cursor: pointer;
-  }
-  
-  .btn:hover {
-    background-color: #ff5e5e;
-  }
-  
-  p {
-    margin: 20px 0;
-    font-size: 16px;
-  }
-  
+  margin: 0;
+  background-color: #f7d58b;
+  font-family: "Poppins", sans-serif;
+}
+
+.mi-contenedor {
+  background-color: #87dfd6;
+  width: 80px;
+  height: 60px;
+  max-width: 700px;
+  margin: 100px auto;
+  padding: 60px 20px;
+  border-radius: 50px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.titulo {
+  font-size: 0px;
+  color: #885af8;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+p {
+  font-size: 18px;
+  color: black;
+  margin: 25px 0 40px 0;
+}
+
+.btn {
+  display: block;
+  width: 180px;
+  margin: 15px auto;
+  padding: 10px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #f77b6c;
+  color: black;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #f25e58;
+}
