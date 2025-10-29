@@ -1,4 +1,4 @@
-<!  DOCTYP<E html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,6 +9,7 @@
           .btn-unirse {
           margin-top: 50px;
           }
+          
         </style>
        <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
 
@@ -69,11 +70,8 @@
 
 
     </div>
-    <script src="scriptr ealtime.js"></script>
-</body>
-</html>
-
-<script>
+    <script src="scriptrealtime.js"></script>
+    <script type="module">
     const botones = document.querySelectorAll("#menu-visible li, #menu-bottom li");
     const pantallas = document.querySelectorAll(".pantalla");
     botones.forEach(boton => {
@@ -84,42 +82,46 @@
             if (target) target.classList.add("activa");
         });
     });
-    const botonUnirse = document.querySelector('.btn-unirse');
+    const botonUnirse = document.getElementById("btn-unirse-codigo");
     const inputSala = document.getElementById('ingresarsala');
     botonUnirse.onclick = function() {
         inputSala.style.display = 'block';
     };
-    document.getElementById(" new").addEventListener("click", function() {
+    document.getElementById("new").addEventListener("click", function() {
   var divAMostrar = document.getElementById("btn-unirse-codigo");
   divAMostrar.style.display = "block";
+  document.querySelector('.element').style.display = 'block';
+
 });
 document.addEventListener('DOMContentLoaded', () => {
     const btnCrear = document.getElementById('btn-crear-proyecto')
     const btnCodigo = document.getElementById('btn-unirse-codigo')
 
     const  button= document.getElementById('btn-crear-proyecto');
-    button = "btn-crear-proyecto".addEventListener('click', function() {
-          button="btn-crear-proyecto".style.display = 'none';
-          button="btn-unirse-codigo".style.display = 'none';
+    button.addEventListener('click', function() {
+          document.getElementById("btn-crear-proyecto").style.display = 'none';
+          document.getElementById("btn-unirse-codigo").style.display = 'none';     
+          document.querySelector('.element').style.display = 'block';
           
-          
-
-          alert('¡Hola!');
         });
   })
 </script>
 
+<div id="new" class="pantalla">
+  <div class="element"></div>
+</div>
 
-<div class="element"></div>
 <script type="module">
   import { Editor } from 'https://esm.sh/@tiptap/core'
   import StarterKit from 'https://esm.sh/@tiptap/starter-kit'
   const editor = new Editor({
     element: document.querySelector('.element'),
     extensions: [StarterKit],
-    content: '<p>Hello World!</p>',
   })
 </script>
+
+</body>
+</html>
 
  
  

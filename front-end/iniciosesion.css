@@ -5,7 +5,6 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-
 /* Nubes */
 #nubeIzquierda, #nubeDerecha {
   position: fixed;
@@ -15,23 +14,20 @@ body {
   z-index: 1;
 }
 
-
 #nubeIzquierda {
   bottom: 0;
   left: 0;
 }
-
 
 #nubeDerecha {
   top: 0;
   right: 0;
 }
 
-
 /* Cuadro central */
 #rectangulo {
   width: 340px;
-  height: 420px;
+  height: 380px; /* Reducido el tamaño de la altura */
   background-color: #86E3CE;
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
@@ -44,7 +40,6 @@ body {
   padding-top: 30px;
 }
 
-
 /* Título */
 .titulo {
   font-size: 28px;
@@ -52,7 +47,6 @@ body {
   color: #000;
   margin-bottom: 25px;
 }
-
 
 /* Inputs */
 .input-group {
@@ -62,13 +56,11 @@ body {
   margin-bottom: 18px;
 }
 
-
 .icono {
   width: 28px;
   height: 28px;
   margin-right: 10px;
 }
-
 
 input {
   width: 180px;
@@ -78,7 +70,6 @@ input {
   outline: none;
   font-size: 14px;
 }
-
 
 /* Botón */
 #sesionbtn {
@@ -92,7 +83,6 @@ input {
   margin-top: 10px;
   transition: 0.3s;
 }
-
 
 #sesionbtn:hover {
   background-color: #f76c5e;
