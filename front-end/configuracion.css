@@ -12,9 +12,10 @@ body {
   right: 880px;
   font-size: 60px;
 }
-.p1 {
-  position: relative; /* O absolute */
-  top: 30px;
+
+.p1 label {
+  
+  top: 20px;
   left: 50px;
   font-size: 24px;
 }
@@ -53,12 +54,14 @@ body {
   font-weight: 500;
 }
 
-/* contenedor del control (min - slider - max) */
 .intervalo-control {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-left: 100px;   /* si ya lo usás para moverlo a la derecha */
+  margin-top: 60px;     /* -> mueve todo hacia abajo */
 }
+
 
 /* min y max */
 .intervalo-control .min,
@@ -154,15 +157,7 @@ input[type="range"]::-moz-range-thumb {
 /* ====== Estilos añadidos para el slider (pegar al final del CSS) ====== */
 
 /* Anular el posicionamiento viejo de .p1 solo cuando use la clase label */
-.p1.label {
-  position: static !important;
-  top: auto !important;
-  left: auto !important;
-  margin: 0;
-  font-size: 18px;
-  width: 380px; /* ancho fijo para alinear el control a la derecha */
-  font-weight: 500;
-}
+
 
 /* fila de la opción */
 .setting-row {
@@ -276,4 +271,26 @@ input[type="range"]::-moz-range-thumb {
   .p1.label, .slider-container { width: 280px; }
 }
 
+/* Mover sólo el slider (track + thumb) hacia abajo sin tocar los números */
+.slider-container input[type="range"] {
+  /* mueve visualmente el track y thumb hacia abajo */
+  transform: translateY(30px);
+  /* compatibilidad */
+  -webkit-transform: translateY(10px);
+  transition: transform 0.08s;
+}
+
+/* Ajustar la posición de la burbuja para que siga al thumb */
+.slider-container .tooltip {
+  top: -34px; /* antes estaba -44px; súbelo/ bájalo según necesites */
+}
+
+/* Si usas estilos específicos del thumb que afectan su centrado, puedes compensar */
+.slider-container input[type="range"]::-webkit-slider-thumb {
+  margin-top: -2px; /* ajusta si el thumb se ve descentrado verticalmente */
+}
+.slider-container input[type="range"]::-moz-range-thumb {
+  /* para Firefox */
+  margin-top: -2px;
+}
 
