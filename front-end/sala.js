@@ -1,10 +1,10 @@
- const socket = io();
+ const socket = io("http://localhost:3000");
     const editor = document.getElementById("editor");
     const roomMUESTRA = document.getElementById("roomName");
     const userMUESTRA = document.getElementById("userName");
 
     const docId = localStorage.getItem("docId");
-    const user = localStorage.getItem("user");
+    const user = localStorage.getItem("userDEV");
 
     if (!docId || !user) {
       alert("Faltan datos, redirigiendo...");
@@ -22,14 +22,11 @@
     socket.on("updateDocument", (newContent) => {
       editor.value = newContent;
     });
-
-    editor.addEventListener("input", () => {
+ function probando() {
       socket.emit("editDocument", {
         docId,
         user,
         content: editor.value
       });
-    });
-    window.addEventListener("beforeunload", () => {
-      socket.emit("salir", { docId, user });
-    })
+    }
+    editor.addEventListener("input",probando)
