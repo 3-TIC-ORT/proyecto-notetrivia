@@ -36,5 +36,244 @@ body {
   left: 50px;
   font-size: 24px;
 }
+/* ---------- Layout fila de la opción ---------- */
+.setting-row {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 32px 40px; /* separacion desde la izquierda */
+}
+
+/* etiqueta a la izquierda */
+.p1 {
+  margin: 0;
+  font-size: 18px;
+  width: 380px; /* fijo para que la derecha quede alineada */
+  color: #0c0c0c;
+  font-weight: 500;
+}
+
+/* contenedor del control (min - slider - max) */
+.intervalo-control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* min y max */
+.intervalo-control .min,
+.intervalo-control .max {
+  font-size: 13px;
+  width: 22px;
+  color: #111;
+  text-align: center;
+}
+
+/* ancho del slider (ajustalo si lo querés más corto/largo) */
+.slider-container {
+  position: relative;
+  width: 420px; /* ajustar si querés más/menos largo */
+  height: 36px;
+}
+
+/* estilo base del range (WebKit + fallback) */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 10px;
+  background: #f9c8c8; /* track rosado claro */
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* WebKit track */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 10px;
+  background: #ffb6b6; /* rosado/salmón */
+}
+
+/* WebKit thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #6ee6df; /* turquesa/menta */
+  margin-top: -4px; /* centrar con la pista */
+  box-shadow: 0 0 0 6px rgba(110,230,223,0.12);
+  cursor: pointer;
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-track {
+  height: 8px;
+  border-radius: 10px;
+  background: #ffb6b6;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #6ee6df;
+  border: none;
+}
+
+/* Tooltip (burbuja con número) */
+.tooltip {
+  position: absolute;
+  top: -44px; /* sobre el slider */
+  left: 0%;
+  transform: translateX(-50%);
+  background: #9ef5f3; /* celeste claro */
+  color: #072; 
+  font-weight: 700;
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: 13px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* triángulo pequeño debajo de la burbuja */
+.tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px 6px 0 6px;
+  border-style: solid;
+  border-color: #9ef5f3 transparent transparent transparent;
+}
+/* ====== Estilos añadidos para el slider (pegar al final del CSS) ====== */
+
+/* Anular el posicionamiento viejo de .p1 solo cuando use la clase label */
+.p1.label {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  margin: 0;
+  font-size: 18px;
+  width: 380px; /* ancho fijo para alinear el control a la derecha */
+  font-weight: 500;
+}
+
+/* fila de la opción */
+.setting-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 0;
+}
+
+/* contenedor del control (min - slider - max) */
+.intervalo-control {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* min y max */
+.intervalo-control .min,
+.intervalo-control .max {
+  font-size: 13px;
+  width: 28px;
+  text-align: center;
+  color: #111;
+}
+
+/* contenedor del slider */
+.slider-container {
+  position: relative;
+  width: 420px; /* ajustá si lo querés más corto/largo */
+  height: 36px;
+}
+
+/* estilo del input range */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 10px;
+  background: #f9c8c8; /* pista clara */
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* pista visible (webkit) */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 10px;
+  background: #ffb6b6; /* rosado/salmón */
+}
+
+/* pulgar / thumb (webkit) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #6ee6df; /* turquesa */
+  margin-top: -4px; /* centrar con la pista */
+  box-shadow: 0 0 0 6px rgba(110,230,223,0.12);
+  cursor: pointer;
+}
+
+/* firefox */
+input[type="range"]::-moz-range-track {
+  height: 8px;
+  border-radius: 10px;
+  background: #ffb6b6;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #6ee6df;
+  border: none;
+}
+
+/* burbuja (tooltip) */
+.tooltip {
+  position: absolute;
+  top: -44px;
+  left: 0%;
+  transform: translateX(-50%);
+  background: #9ef5f3; /* celeste */
+  color: #003;
+  font-weight: 700;
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: 13px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* triángulo debajo de la burbuja */
+.tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px 6px 0 6px;
+  border-style: solid;
+  border-color: #9ef5f3 transparent transparent transparent;
+}
+
+/* responsive pequeño */
+@media (max-width: 900px) {
+  .p1.label, .slider-container { width: 280px; }
+}
 
 

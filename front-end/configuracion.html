@@ -10,9 +10,44 @@
 <body>
   <img src="../IMGS/Engranaje.png" alt="Engranaje" class="engranaje">
   <h1 class=configuracion>Configuracion</h1>
-  <p class=p1>Intervalo de guardado en segundos</p>
+  <div class="setting-row">
+    <p class="p1 label">Intervalo de guardado en segundos</p>
+  
+    <div class="intervalo-control">
+      <span class="min">30</span>
+  
+      <div class="slider-container">
+        <input type="range" id="intervalo" min="30" max="90" value="32" />
+        <div class="tooltip" id="valor">32</div>
+      </div>
+  
+      <span class="max">90</span>
+    </div>
+  </div>
+  
   <p class=p2>Tema</p>
   <p class=p3>Ayuda</p>
   <p class=p4>Historial de versiones</p>
+  <script>
+    const range = document.getElementById("intervalo");
+    const tooltip = document.getElementById("valor");
+  
+    function updateTooltip() {
+      if (!range || !tooltip) return;
+      const min = Number(range.min);
+      const max = Number(range.max);
+      const val = Number(range.value);
+      tooltip.textContent = val;
+      const percent = (val - min) / (max - min) * 100;
+      tooltip.style.left = percent + '%';
+    }
+  
+    if (range) {
+      range.addEventListener('input', updateTooltip);
+      window.addEventListener('resize', updateTooltip);
+      updateTooltip();
+    }
+  </script>
+  
 </body>
 </html> 
