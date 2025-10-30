@@ -1,0 +1,20 @@
+body {
+    background-color: #FFDD95;
+    display: flex;
+  justify-content: center; /* centra horizontalmente */
+  align-items: center; /* centra verticalmente */
+  height: 100vh; /* ocupa toda la altura de la ventana */
+  margin: 0;
+}
+.rectangulo {
+    background-color: #86E3CE;
+    text-align: center;
+    height: 500px;
+    width: 1000px;
+    
+}
+.flecha {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

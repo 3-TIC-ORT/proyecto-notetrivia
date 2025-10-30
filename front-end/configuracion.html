@@ -1,53 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>configuracion</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Configuración</title>
   <link rel="stylesheet" href="configuracion.css">
 </head>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-  </style>
 <body>
-  <img src="../IMGS/Engranaje.png" alt="Engranaje" class="engranaje">
-  <h1 class=configuracion>Configuracion</h1>
-  <div class="setting-row">
-    <p class="p2">Intervalo de guardado en segundos</p>
-  
-    <div class="intervalo-control">
-      <span class="min">30</span>
-  
-      <div class="slider-container">
-        <input type="range" id="intervalo" min="30" max="90" value="32" />
-        <div class="tooltip" id="valor">32</div>
-      </div>
-  
-      <span class="max">90</span>
+  <header class="header">
+    <!-- Flecha de volver -->
+    <button class="back" aria-label="Volver">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 18L9 12L15 6" stroke="#0b0b0b" stroke-width="2.4"
+          stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </button>
+
+    <!-- Engranaje y título -->
+    <div class="title-wrap">
+      <img src="../IMGS/Engranaje.png" alt="Engranaje" class="engranaje">
+      <h1 class="configuracion">Configuración</h1>
     </div>
-  </div>
-  
-  <p class=p2>Tema</p>
-  <p class=p3>Ayuda</p>
-  <p class=p4>Historial de versiones</p>
+  </header>
+
+  <main class="content">
+    <!-- Fila de intervalo -->
+    <div class="setting-row">
+      <p class="p2">Intervalo de guardado en segundos</p>
+
+      <div class="intervalo-control">
+        <span class="min">30</span>
+        <div class="slider-container">
+          <input type="range" id="intervalo" min="30" max="90" value="32" />
+          <div class="tooltip" id="valor">32</div>
+        </div>
+        <span class="max">90</span>
+      </div>
+    </div>
+
+    <!-- Otros textos -->
+    <p class="p3">Ayuda</p>
+    <p class="p4">Historial de versiones</p>
+  </main>
+
   <script>
     const range = document.getElementById("intervalo");
     const tooltip = document.getElementById("valor");
-  
+
     function updateTooltip() {
-      if (!range || !tooltip) return;
-      const min = Number(range.min);
-      const max = Number(range.max);
-      const val = Number(range.value);
+      const min = +range.min;
+      const max = +range.max;
+      const val = +range.value;
       tooltip.textContent = val;
-      const percent = (val - min) / (max - min) * 100;
+      const percent = ((val - min) / (max - min)) * 100;
       tooltip.style.left = percent + '%';
     }
-  
-    if (range) {
-      range.addEventListener('input', updateTooltip);
-      window.addEventListener('resize', updateTooltip);
-      updateTooltip();
-    }
+
+    range.addEventListener('input', updateTooltip);
+    window.addEventListener('resize', updateTooltip);
+    updateTooltip();
   </script>
-  
 </body>
-</html> 
+</html>
