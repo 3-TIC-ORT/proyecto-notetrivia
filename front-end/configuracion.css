@@ -1,261 +1,160 @@
+/* configuracion.css - versión limpia para tu HTML actual */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root{
+  --bg: #FFDD95;
+  --track: #ffb6b6;
+  --track-light: #f9c8c8;
+  --thumb: #7ceef5;
+  --tooltip: #9ef5f3;
+  --text: #0c0c0c;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
 body {
-    background-color: #FFDD95; /* Usa un valor hexadecimal */
-  }
-  
-  .engranaje {
-    width: 100px;  
-    height: auto;  
-}
-.configuracion{
-  position: fixed;
-  top: 0;
-  right: 880px;
-  font-size: 60px;
+  background: var(--bg);
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  padding: 18px 28px; /* margen general */
 }
 
-.p1 label {
-  
-  top: 20px;
-  left: 50px;
-  font-size: 24px;
+/* --- header (usa la estructura que ya tenés: img + h1) --- */
+.engranaje {
+  width: 110px;
+  height: auto;
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 10px;
 }
-.p2{
-  position: relative; /* O absolute */
-  top: 60px;
-  left: 50px;
-  font-size: 24px;
+.configuracion {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 64px;
+  font-weight: 600;
+  margin: 6px 0 0 0;
+  position: static !important; /* anula cualquier fixed anterior */
 }
-.p3{
-  position: relative; /* O absolute */
-  top: 100px;
-  left: 50px;
-  font-size: 24px;
+
+/* --- contenedor principal del contenido --- */
+.content {
+  margin-top: 26px;
+  max-width: 1200px;
+  padding-left: 10px;
 }
-.p4{
-  position: relative; /* O absolute */
-  top: 140px;
-  left: 50px;
-  font-size: 24px;
-}
-/* ---------- Layout fila de la opción ---------- */
+
+/* --- fila de configuración (etiqueta + control) --- */
 .setting-row {
   display: flex;
-  align-items: center;
-  gap: 28px;
-  padding: 32px 40px; /* separacion desde la izquierda */
-}
-
-/* etiqueta a la izquierda */
-.p1 {
-  margin: 0;
-  font-size: 18px;
-  width: 380px; /* fijo para que la derecha quede alineada */
-  color: #0c0c0c;
-  font-weight: 500;
-}
-
-.intervalo-control {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-left: 100px;   /* si ya lo usás para moverlo a la derecha */
-  margin-top: 60px;     /* -> mueve todo hacia abajo */
-}
-
-
-/* min y max */
-.intervalo-control .min,
-.intervalo-control .max {
-  font-size: 13px;
-  width: 22px;
-  color: #111;
-  text-align: center;
-}
-
-/* ancho del slider (ajustalo si lo querés más corto/largo) */
-.slider-container {
-  position: relative;
-  width: 420px; /* ajustar si querés más/menos largo */
-  height: 36px;
-}
-
-/* estilo base del range (WebKit + fallback) */
-input[type="range"] {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 8px;
-  border-radius: 10px;
-  background: #f9c8c8; /* track rosado claro */
-  outline: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* WebKit track */
-input[type="range"]::-webkit-slider-runnable-track {
-  height: 8px;
-  border-radius: 10px;
-  background: #ffb6b6; /* rosado/salmón */
-}
-
-/* WebKit thumb */
-input[type="range"]::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: #6ee6df; /* turquesa/menta */
-  margin-top: -4px; /* centrar con la pista */
-  box-shadow: 0 0 0 6px rgba(110,230,223,0.12);
-  cursor: pointer;
-}
-
-/* Firefox */
-input[type="range"]::-moz-range-track {
-  height: 8px;
-  border-radius: 10px;
-  background: #ffb6b6;
-}
-input[type="range"]::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: #6ee6df;
-  border: none;
-}
-
-/* Tooltip (burbuja con número) */
-.tooltip {
-  position: absolute;
-  top: -44px; /* sobre el slider */
-  left: 0%;
-  transform: translateX(-50%);
-  background: #9ef5f3; /* celeste claro */
-  color: #072; 
-  font-weight: 700;
-  padding: 6px 8px;
-  border-radius: 8px;
-  font-size: 13px;
-  white-space: nowrap;
-  pointer-events: none;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-
-/* triángulo pequeño debajo de la burbuja */
-.tooltip::after {
-  content: "";
-  position: absolute;
-  bottom: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 6px 6px 0 6px;
-  border-style: solid;
-  border-color: #9ef5f3 transparent transparent transparent;
-}
-/* ====== Estilos añadidos para el slider (pegar al final del CSS) ====== */
-
-/* Anular el posicionamiento viejo de .p1 solo cuando use la clase label */
-
-
-/* fila de la opción */
-.setting-row {
-  display: flex;
-  align-items: center;
+  align-items: center;    /* clave: mantiene la etiqueta y el slider en la misma línea */
   gap: 18px;
   padding: 18px 0;
 }
 
-/* contenedor del control (min - slider - max) */
+/* Aplica el estilo a tus p1/p2/p3/p4, sin cambiar HTML */
+.p1, .p2, .p3, .p4 {
+  margin: 0;
+  font-size: 20px;
+  width: 420px;      /* ancho fijo para que el control se alinee a la derecha */
+  font-weight: 500;
+  line-height: 36px; /* centra verticalmente con la pista */
+  color: var(--text);
+}
+
+/* variante simple (cuando solo está la etiqueta abajo) */
+.setting-row.simple .p2,
+.setting-row.simple .p3,
+.setting-row.simple .p4 {
+  width: 420px;
+}
+
+/* --- control completo (30 - slider - 90) --- */
 .intervalo-control {
   display: flex;
   align-items: center;
   gap: 12px;
+  /* no usamos margin-left aquí: la etiqueta tiene width fija para alinear */
 }
 
-/* min y max */
+/* min y max (30 y 90) - los bajamos un poquito para alinearlos con la pista */
 .intervalo-control .min,
 .intervalo-control .max {
   font-size: 13px;
+  display: inline-block;
+  transform: translateY(12px); /* baja los números sin afectar el flujo */
+  color: #111;
   width: 28px;
   text-align: center;
-  color: #111;
 }
 
-/* contenedor del slider */
+/* slider container y tamaño de la pista */
 .slider-container {
   position: relative;
-  width: 420px; /* ajustá si lo querés más corto/largo */
+  width: 360px;   /* ajustá si querés la pista más larga/corta */
   height: 36px;
 }
 
-/* estilo del input range */
-input[type="range"] {
+/* input range - estilo base */
+.slider-container input[type="range"]{
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
   height: 8px;
   border-radius: 10px;
-  background: #f9c8c8; /* pista clara */
-  outline: none;
+  background: var(--track-light);
   margin: 0;
   padding: 0;
 }
 
-/* pista visible (webkit) */
-input[type="range"]::-webkit-slider-runnable-track {
+/* track (webkit) */
+.slider-container input[type="range"]::-webkit-slider-runnable-track{
   height: 8px;
   border-radius: 10px;
-  background: #ffb6b6; /* rosado/salmón */
+  background: var(--track);
 }
 
-/* pulgar / thumb (webkit) */
-input[type="range"]::-webkit-slider-thumb {
+/* thumb (webkit) */
+.slider-container input[type="range"]::-webkit-slider-thumb{
   -webkit-appearance: none;
-  appearance: none;
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background: #6ee6df; /* turquesa */
-  margin-top: -4px; /* centrar con la pista */
-  box-shadow: 0 0 0 6px rgba(110,230,223,0.12);
+  background: var(--thumb);
+  margin-top: -3px; /* centra el thumb con la pista */
+  box-shadow: 0 0 0 6px rgba(124,238,245,0.12);
   cursor: pointer;
 }
 
-/* firefox */
-input[type="range"]::-moz-range-track {
+/* Firefox */
+.slider-container input[type="range"]::-moz-range-track{
   height: 8px;
   border-radius: 10px;
-  background: #ffb6b6;
+  background: var(--track);
 }
-input[type="range"]::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
+.slider-container input[type="range"]::-moz-range-thumb{
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background: #6ee6df;
+  background: var(--thumb);
   border: none;
 }
 
-/* burbuja (tooltip) */
-.tooltip {
+/* Tooltip (burbuja con número) */
+.tooltip{
   position: absolute;
-  top: -44px;
-  left: 0%;
+  top: -38px;               /* ajusta este valor si querés la burbuja más alta/baja */
+  left: 0;
   transform: translateX(-50%);
-  background: #9ef5f3; /* celeste */
+  background: var(--tooltip);
   color: #003;
   font-weight: 700;
   padding: 6px 8px;
   border-radius: 8px;
   font-size: 13px;
-  white-space: nowrap;
   pointer-events: none;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
-
-/* triángulo debajo de la burbuja */
-.tooltip::after {
+.tooltip::after{
   content: "";
   position: absolute;
   bottom: -6px;
@@ -263,34 +162,24 @@ input[type="range"]::-moz-range-thumb {
   transform: translateX(-50%);
   border-width: 6px 6px 0 6px;
   border-style: solid;
-  border-color: #9ef5f3 transparent transparent transparent;
+  border-color: var(--tooltip) transparent transparent transparent;
 }
 
-/* responsive pequeño */
-@media (max-width: 900px) {
-  .p1.label, .slider-container { width: 280px; }
+/* --- ajustes para pantallas pequeñas --- */
+@media (max-width: 900px){
+  .p1, .p2, .p3, .p4, .slider-container {
+    width: 280px;
+  }
+  .configuracion { font-size: 48px; }
+}
+/* ===== Restaurar separación vertical entre párrafos/sections ===== */
+/* Aplica margen inferior a las etiquetas/párrafos para recuperar el espacio vertical */
+.p1, .p2, .p3, .p4, .label {
+  margin: 0 0 44px 0; /* margen inferior: 44px (ajustalo si querés más/menos) */
+  display: block;
 }
 
-/* Mover sólo el slider (track + thumb) hacia abajo sin tocar los números */
-.slider-container input[type="range"] {
-  /* mueve visualmente el track y thumb hacia abajo */
-  transform: translateY(30px);
-  /* compatibilidad */
-  -webkit-transform: translateY(10px);
-  transition: transform 0.08s;
+/* Asegurar que las filas con .setting-row mantengan su propio padding */
+.setting-row {
+  padding: 20px 0; /* separa las filas entre sí */
 }
-
-/* Ajustar la posición de la burbuja para que siga al thumb */
-.slider-container .tooltip {
-  top: -34px; /* antes estaba -44px; súbelo/ bájalo según necesites */
-}
-
-/* Si usas estilos específicos del thumb que afectan su centrado, puedes compensar */
-.slider-container input[type="range"]::-webkit-slider-thumb {
-  margin-top: -2px; /* ajusta si el thumb se ve descentrado verticalmente */
-}
-.slider-container input[type="range"]::-moz-range-thumb {
-  /* para Firefox */
-  margin-top: -2px;
-}
-

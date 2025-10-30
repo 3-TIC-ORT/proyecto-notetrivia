@@ -6,31 +6,10 @@ body {
 }
 
 
-/* Nubes */
-#nubeIzquierda, #nubeDerecha {
-  position: fixed;
-  width: 220px;        /* mismo tamaño para ambas */
-  height: auto;
-  filter: brightness(0) invert(1); /* las vuelve blancas */
-  z-index: 1;
-}
-
-
-#nubeIzquierda {
-  bottom: 0;
-  left: 0;
-}
-
-
-#nubeDerecha {
-  top: 0;
-  right: 0;
-}
-
 
 /* Cuadro central */
-#rectangulo {
-  width: 340px;
+.mi-contenedor {
+  width: 700px;
   height: 420px;
   background-color: #86E3CE;
   border-radius: 20px;
@@ -44,25 +23,6 @@ body {
   padding-top: 30px;
 }
 
-
-/* Título */
-.titulo {
-  font-size: 28px;
-  font-weight: 600;
-  color: #000;
-  margin-bottom: 25px;
-}
-
-
-/* Inputs */
-.input-group {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 18px;
-}
-
-
 .icono {
   width: 28px;
   height: 28px;
@@ -70,25 +30,16 @@ body {
 }
 
 
-input {
-  width: 180px;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  outline: none;
-  font-size: 14px;
-}
-
 
 /* Botón */
-#sesionbtn {
+.btn {
   background-color: #FA897B;
   color: black;
   border: none;
   border-radius: 10px;
   padding: 10px 25px;
   font-size: 16px;
-  cursor: pointer;
+  cursor: hover;
   margin-top: 10px;
   transition: 0.3s;
 }
@@ -96,4 +47,9 @@ input {
 
 #sesionbtn:hover {
   background-color: #f76c5e;
+}
+
+.titulo-imagen {
+  width: 400px;
+  height: 100px;
 }
