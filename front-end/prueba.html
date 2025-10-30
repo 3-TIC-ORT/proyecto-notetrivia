@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editor</title>
+  <style>
+    .element {
+      min-height: 300px; /* para poder escribir y verlo */
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+  </style>
 </head>
 <body>
-    <div class="element"></div>
-    <script type="module">
-      import { Editor } from 'https://esm.sh/@tiptap/core'
-      import StarterKit from 'https://esm.sh/@tiptap/starter-kit'
-      const editor = new Editor({
-        element: document.querySelector('.element'),
-        extensions: [StarterKit],
-        content: '<p>Hello World!</p>',
-      })
-    </script>
+  <div class="element"></div>
+
+  <script type="module">
+    import { Editor } from 'https://esm.sh/@tiptap/core'
+    import StarterKit from 'https://esm.sh/@tiptap/starter-kit'
+
+    new Editor({
+      element: document.querySelector('.element'),
+      extensions: [StarterKit],
+      content: '<p>Hola Mundo</p>',
+    })
+  </script>
 </body>
 </html>
+
