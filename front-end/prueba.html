@@ -3,24 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="prueba.css">
   <title>Editor</title>
-  <style>
-    .element {
-      min-height: 300px; /* para poder escribir y verlo */
-      border: 1px solid #ccc;
-      padding: 10px;
-    }
-  </style>
+  
 </head>
 <body>
-  <div class="element"></div>
+  <div class="tiptap"></div>
 
   <script type="module">
     import { Editor } from 'https://esm.sh/@tiptap/core'
     import StarterKit from 'https://esm.sh/@tiptap/starter-kit'
 
     new Editor({
-      element: document.querySelector('.element'),
+      element: document.querySelector('.tiptap'),
       extensions: [StarterKit],
       content: '<p>Hola Mundo</p>',
     })
