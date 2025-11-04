@@ -9,7 +9,7 @@ body {
 
 /* Cuadro central */
 .mi-contenedor {
-  width: 700px;
+  width: 800px;
   height: 420px;
   background-color: #86E3CE;
   border-radius: 20px;
@@ -34,16 +34,22 @@ body {
 /* Botón */
 .btn {
   background-color: #FA897B;
-  color: black;
-  border: none;
-  border-radius: 10px;
-  padding: 10px 25px;
+  color: white;
+  border: 2px #A25248 solid;
+  border-radius: 0px;
+  padding: 10px;
   font-size: 16px;
   cursor: hover;
   margin-top: 10px;
-  transition: 0.3s;
+  width: 180px;
+  height: 30px;
 }
 
+.textoInicoSesion {
+  position: absolute;
+  top: -7%;
+  right: 3%;
+}
 
 #sesionbtn:hover {
   background-color: #f76c5e;
