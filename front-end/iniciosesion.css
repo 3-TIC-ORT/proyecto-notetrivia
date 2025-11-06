@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 body {
   background-color: #FFDD95;
   margin: 0;
@@ -10,7 +12,6 @@ body {
   position: fixed;
   width: 220px;        /* mismo tamaño para ambas */
   height: auto;
-  filter: brightness(0) invert(1); /* las vuelve blancas */
   z-index: 1;
 }
 
@@ -26,7 +27,7 @@ body {
 
 /* Cuadro central */
 #rectangulo {
-  width: 340px;
+  width: 320px;
   height: 380px; /* Reducido el tamaño de la altura */
   background-color: #86E3CE;
   border-radius: 16px;
@@ -37,16 +38,16 @@ body {
   transform: translate(-50%, -50%);
   z-index: 2;
   text-align: center;
-  padding-top: 26px 28px 36px;
+  padding: 26px 28px 60px;
 }
 
 /* Título */
 .titulo {
   font-family: 'Poppins', sans-serif;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
   color: #000;
-  margin-bottom: 18px;
+  margin-bottom: 28px;
 }
 
 /* Inputs */
@@ -54,9 +55,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  width: 82%;
+  width: 85%;
   margin: 0 auto 18px auto;
-  margin-bottom: 18px;
+  margin-bottom: 36px;
 }
 
 .icono {
@@ -66,8 +67,8 @@ body {
 }
 
 input {
-  width: 180px;
-  padding: 10px;
+  width: 100%;
+padding: 8px 0;
   border-radius: 0px;
   border: none;
   outline: none;
@@ -84,14 +85,19 @@ input {
   border: none;
   border-radius: 12px;
   padding: 12px 20px;
-  font-size: 16px;
+  font-size: 17px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 20px;
   transition: 0.3s;
-  width: 76%;
+  width: 85%;
 margin: 18px auto 0 auto;
 }
 
 #sesionbtn:hover {
   background-color: #f76c5e;
+}
+
+input::placeholder {
+  color: #666;
+  font-weight: 500;
 }
