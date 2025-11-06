@@ -27,8 +27,8 @@ body {
 
 /* Cuadro central */
 #rectangulo {
-  width: 320px;
-  height: 380px; /* Reducido el tamaño de la altura */
+  width: 300px;          /* igual que referencia */
+  height: auto;   
   background-color: #86E3CE;
   border-radius: 16px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
@@ -38,16 +38,16 @@ body {
   transform: translate(-50%, -50%);
   z-index: 2;
   text-align: center;
-  padding: 26px 28px 60px;
+  padding: 30px 32px 40px; 
 }
 
 /* Título */
 .titulo {
   font-family: 'Poppins', sans-serif;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 19px;           /* referencia */
+  font-weight: 400;          
   color: #000;
-  margin-bottom: 28px;
+  margin-bottom: 22px;
 }
 
 /* Inputs */

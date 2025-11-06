@@ -11,7 +11,6 @@ body {
     position: fixed;
     width: 220px;        /* mismo tamaño para ambas */
     height: auto;
-    filter: brightness(0) invert(1); /* las vuelve blancas */
     z-index: 1;
   }
   
@@ -28,68 +27,67 @@ body {
   }
   
   
-  /* Cuadro central */
   #rectangulo {
-    width: 340px;
-    height: 420px;
+    width: 350px;
+    height: auto;
     background-color: #86E3CE;
-    border-radius: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 2;
     text-align: center;
-    padding-top: 30px;
+  
+    /* padding exacto de referencia */
+    padding: 30px 32px 45px;
+    z-index: 2;
   }
-  
-  
-  /* Título */
   .titulo {
-    font-size: 28px;
-    font-weight: 600;
+    font-size: 19px;
+    font-weight: 400;
+    margin-bottom: 22px;
     color: #000;
-    margin-bottom: 25px;
   }
   
-  
-  /* Inputs */
   .input-group {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 18px;
+    justify-content: flex-start;
+    width: 75%;
+    margin: 0 auto 24px auto;
   }
-  
   
   .icono {
-    width: 28px;
-    height: 28px;
-    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+    margin-right: 18px;
   }
+  
   
   
   input {
-    width: 180px;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
+    width: 80%;
+    padding: 6px 0;
+    border: none;
+    border-bottom: 2px solid #222;
+    background: transparent;
     outline: none;
     font-size: 14px;
   }
   
-  
-  /* Botón */
   #registerbtn {
     background-color: #FA897B;
-    color: black;
+    color: white;
     border: none;
-    border-radius: 10px;
-    padding: 10px 25px;
-    font-size: 16px;
+    border-radius: 12px;
+    padding: 14px 0;
+    width: 75%;
+    margin: 28px auto 0 auto;
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
     cursor: pointer;
-    margin-top: 10px;
     transition: 0.3s;
   }
   
@@ -98,3 +96,7 @@ body {
     background-color: #f76c5e;
   }
   
+  input::placeholder {
+    color: #666;
+    font-weight: 300;
+  }
