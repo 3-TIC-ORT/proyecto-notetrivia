@@ -26,18 +26,13 @@ body{
   padding-top:6px;
 }
 
-/* Flecha volver */
-.back{
-  position:absolute;
-  left:0;
-  top:10px;
-  background:transparent;
-  border:none;
-  cursor:pointer;
-  padding:6px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.flecha {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 30px;
+  height: 38px;
+  cursor: pointer;
 }
 
 /* Engranaje + título */
@@ -80,6 +75,7 @@ body{
   line-height:36px;
   margin-bottom:44px;
   color:var(--text);
+  cursor: pointer;
 }
 
 /* Control del intervalo */

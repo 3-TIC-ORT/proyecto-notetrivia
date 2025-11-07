@@ -38,7 +38,24 @@ body {
 
 
 /* Botón */
-.btn {
+.btncrear {
+  background-color: #FA897B;
+  color: white;
+  border: 2px #A25248 solid;
+  border-radius: 0px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 200px;
+  height: 30px;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  text-align: center; /* Asegura que el texto esté centrado en los <p> */
+  margin-bottom: 20px; 
+}
+.btniniciar {
   background-color: #FA897B;
   color: white;
   border: 2px #A25248 solid;
