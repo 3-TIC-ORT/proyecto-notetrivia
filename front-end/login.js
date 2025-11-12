@@ -3,8 +3,8 @@ let formu = document.getElementById("form");
 formu.addEventListener("submit", guardar);
 function guardar(e) {
     e.preventDefault();  
-    let password = document.querySelector("#password").value;
-    let user = document.querySelector("#user").value;
+    let password = document.getElementById("password").value;
+    let user = document.getElementById("user").value;
     socket.emit("login", {user, password});
 }
 socket.on("login-exito", (data) => {
