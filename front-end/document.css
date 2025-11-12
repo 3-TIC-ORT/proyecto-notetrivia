@@ -1,24 +1,32 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #fcecb5; /* más claro */
+      background-color: #fce3a2;
     overflow-y: scroll;
   }
   
   .container {
     display: flex;
-    height: 100vh;
+ 
   }
   
   /* --- BARRA LATERAL --- */
-  .sidebar {
-    background-color: #90d9cb;
-    width: 240px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 15px 0;
-  }
+ .sidebar {
+  position: fixed;
+  top: 0;                       /* 🔸 Empieza desde el tope */
+  left: 0;
+  height: 100vh;                /* 🔸 Ocupa toda la altura de la ventana */
+  width: 240px;
+  background-color: #90d9cb;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-right: 2px solid black; /* 🔸 Línea negra que llega hasta ARRIBA y ABAJO */
+  z-index: 1001;
+  overflow-y: auto;
+}
+
   
   .sidebar h2 {
     font-size: 24px;
@@ -51,25 +59,33 @@ body {
   }
   
   /* --- CONTENIDO PRINCIPAL --- */
-  .content {
-    flex: 1;
-    background-color: #fce3a2;
-    padding: 20px 40px;
-    overflow-y: auto;
-  }
+.content {
+  flex: 1;
+  background-color: #fce3a2;
+  margin-left: 240px;    /* espacio para el menú fijo */
+  margin-top: 55px;      /* espacio para el buscador fijo */
+  padding: 20px 40px;
+  overflow-y: auto;      /* scroll SOLO en el contenido */
+  box-sizing: border-box;
+}
   
   /* --- BUSCADOR --- */
-  .search-bar {
-    display: flex;
-    align-items: center;
-    background-color: #a9e5d5;
-    border-radius: 0px;
-    padding: 6px 15px;
-    margin-bottom: 25px;
-    width: calc(100% + 40px); 
-    margin-left: -40px; 
-    height: 32px; /* más delgado */
-  }
+.search-bar {
+  position: fixed;
+  top: 0;
+  left: 240px;
+  right: 0;
+  display: flex;
+  align-items: center;
+  background-color: #90d9cb;
+  border-bottom: 1px solid black; /* ✅ línea negra debajo del buscador */
+  border-radius: 0;
+  padding: 10px 20px;
+  height: 50px;
+  z-index: 1000;
+}
+
+
   
   .search-bar i {
     color: #333;
@@ -86,11 +102,14 @@ body {
   }
   
   /* --- LISTA DE DOCUMENTOS --- */
-  .document-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+.document-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;            /* separación vertical entre rectángulos (ajustá si querés más/menos) */
+  align-items: stretch; /* hace que los items ocupen todo el ancho del contenedor */
+  width: 100%;
+  box-sizing: border-box;
+}
   
   .document-item {
     background-color: #f59786;
@@ -102,8 +121,9 @@ body {
     justify-content: space-between;
     align-items: center;
     transition: background-color 0.3s;
-    width: 95%;
+    width:100%;
     font-size: 14px;
+    margin-top: 5px;
   }
   
   .document-item:hover {
@@ -129,4 +149,26 @@ body {
     -webkit-text-stroke: 0;
   }
   
-   
+  .document-item:first-child {
+  margin-top: 20px; /* podés ajustar el valor a gusto */
+}
+html, body {
+  height: 100%;
+}
+
+.container {
+  min-height: 100vh; /* ✅ permite que crezca más allá de la ventana */
+}
+
+.content {
+  overflow-y: auto; /* ✅ scroll dentro del área de contenido */
+  height: calc(100vh - 55px); /* ✅ resta la altura del buscador */
+}
+.sidebar a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
