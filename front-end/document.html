@@ -1,127 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="document.css" />
-     <style>
-          .btn-unirse {
-          margin-top: 50px;
-          }
-          
-        </style>
-       <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notetrivia</title>
+  <link rel="stylesheet" href="document.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2><i class="fas fa-home"></i> Inicio</h2>
+      <ul class="menu">
+        <li><i class="fas fa-plus"></i> New</li>
+        <li><i class="fas fa-heart"></i> Favourites</li>
+        <li><i class="fas fa-user"></i> Creado por mi</li>
+        <li><i class="fas fa-folder"></i> Folders</li>
+        <li><i class="fas fa-users"></i> Compartido conmigo</li>
+      </ul>
+      <ul class="menu-bottom">
+        <li><i class="fas fa-user-circle"></i> Mi Perfil</li>
+        <li><i class="fas fa-cog"></i> Configuración</li>
+      </ul>
+    </aside>
 
-    <body style= "background-color: White;">
-    <div id="barramenu">
-        <div class="menu-icon" aria-label="menu" role="button" tabindex="0">
-            <div class="new">
-              <img src="../IMGS/Vector.png" alt="mas">
-            </div>
-            <div></div>
-            <div></div>
+    <main class="content">
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Buscar en notetrivia">
+      </div>
+
+      <div class="document-list">
+        <div class="document-item">
+          nombre del documento
+          <div class="icons">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-trash"></i>
           </div>
-          <ul id="menu-visible">
-            <li data-pantalla ="inicio"> Inicio</li>
-            <li data-pantalla ="new" id="new">New</li>
-            <li data-pantalla ="folders">Folders</li>
-            <li data-pantalla = "favourites">Favourites</li>
-            <li data-pantalla = "created">Created by me</li>
-            <li data-pantalla = "bin"> Bin</li>
-            <li data-pantalla="sharewithme">Share with me</li>
-          </ul>
-          <ul id="menu-bottom">
-            <li data-pantalla = "perfil">Mi perfil</li>
-            <li data-pantalla = "settings">Settings</li>
-
-          </ul>
-    </div>
-   
-    <div id = "pantallas">
-      <div id ="inicio" class="pantalla activa">
-        <input type="text" id="ingresarsala" placeholder="Ingresa el codigo de sala" style="display: none;">
-        <div class="search-box">
-          <form method="get" id="search-form">
-             <fieldset>
-                <input type="text" id="search-input" placeholder="Buscar"  />
-                <input class="search-button" type="submit" value="Buscar" />
-                <i class="search-icon"></i>
-             </fieldset>
-          </form>
-       </div>
-       </div>
-       <div id="new" class="pantalla"></div>
-       <div id="unirse/crear" class="oculto"></div>
-       <button id="btn-unirse-codigo">Unirse con un código</button>
-       <button id="btn-crear-proyecto">Crear nuevo proyecto</button>
-   </div>
- </div>
-      <div id ="sharewithme" class="pantalla"></div>
-      <div id ="folders" class="pantalla"></div>
-      <div id="favourites" class="pantalla"></div>
-      <div id="created" class="pantalla"></div>
-      <div id="bin" class="pantalla"></div>
-      <div id="perfil" class="pantalla"></div>
-      <div id="settings" class="pantalla"></div>
-
-
-    </div>
-    <script src="scriptrealtime.js"></script>
-    <script type="module">
-    const botones = document.querySelectorAll("#menu-visible li, #menu-bottom li");
-    const pantallas = document.querySelectorAll(".pantalla");
-    botones.forEach(boton => {
-        boton.addEventListener("click", () => {
-            pantallas.forEach(p => p.classList.remove("activa"));
-            const id = boton.dataset.pantalla;
-            const target = document.getElementById(id);
-            if (target) target.classList.add("activa");
-        });
-    });
-    const botonUnirse = document.getElementById("btn-unirse-codigo");
-    const inputSala = document.getElementById('ingresarsala');
-    botonUnirse.onclick = function() {
-        inputSala.style.display = 'block';
-    };
-    document.getElementById("new").addEventListener("click", function() {
-  var divAMostrar = document.getElementById("btn-unirse-codigo");
-  divAMostrar.style.display = "block";
-  document.querySelector('.element').style.display = 'block';
-
-});
-document.addEventListener('DOMContentLoaded', () => {
-    const btnCrear = document.getElementById('btn-crear-proyecto')
-    const btnCodigo = document.getElementById('btn-unirse-codigo')
-
-    const  button= document.getElementById('btn-crear-proyecto');
-    button.addEventListener('click', function() {
-          document.getElementById("btn-crear-proyecto").style.display = 'none';
-          document.getElementById("btn-unirse-codigo").style.display = 'none';     
-          document.querySelector('.element').style.display = 'block';
-          
-        });
-  })
-</script>
-
-<div id="new" class="pantalla">
-  <div class="element"></div>
-</div>
-
-<script type="module">
-  import { Editor } from 'https://esm.sh/@tiptap/core'
-  import StarterKit from 'https://esm.sh/@tiptap/starter-kit'
-  const editor = new Editor({
-    element: document.querySelector('.element'),
-    extensions: [StarterKit],
-  })
-</script>
-
+        </div>
+        <div class="document-item">
+          nombre del documento
+          <div class="icons">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-trash"></i>
+          </div>
+        </div>
+        <div class="document-item">
+          nombre del documento
+          <div class="icons">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-trash"></i>
+          </div>
+        </div>
+        <div class="document-item">
+          nombre del documento
+          <div class="icons">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-trash"></i>
+          </div>
+        </div>
+        <div class="document-item">
+          nombre del documento
+          <div class="icons">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-trash"></i>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
 
- 
- 
