@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background-color: #fcecb5; /* más claro */
+    overflow-y: scroll;
   }
   
   .container {
@@ -12,7 +13,7 @@ body {
   /* --- BARRA LATERAL --- */
   .sidebar {
     background-color: #90d9cb;
-    width: 180px; /* más estrecho */
+    width: 240px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -20,7 +21,7 @@ body {
   }
   
   .sidebar h2 {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 600;
     margin-left: 15px;
     margin-bottom: 10px;
@@ -32,12 +33,16 @@ body {
     margin: 0;
   }
   
+  .sidebar i {
+    font-size: 20px; 
+  }
+
   .sidebar li {
     display: flex;
     align-items: center;
     gap: 8px;
     padding: 6px 18px;
-    font-size: 14px;
+    font-size: 18px;
     cursor: pointer;
   }
   
@@ -50,6 +55,7 @@ body {
     flex: 1;
     background-color: #fce3a2;
     padding: 20px 40px;
+    overflow-y: auto;
   }
   
   /* --- BUSCADOR --- */
@@ -57,10 +63,11 @@ body {
     display: flex;
     align-items: center;
     background-color: #a9e5d5;
-    border-radius: 25px;
+    border-radius: 0px;
     padding: 6px 15px;
     margin-bottom: 25px;
-    width: 95%;
+    width: calc(100% + 40px); 
+    margin-left: -40px; 
     height: 32px; /* más delgado */
   }
   
@@ -87,9 +94,10 @@ body {
   
   .document-item {
     background-color: #f59786;
-    color: white;
+    color: black;
     padding: 8px 12px;
-    border-radius: 8px;
+    border-radius: 0px;
+    border:none;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -105,13 +113,20 @@ body {
   
   .document-item .icons i {
     margin-left: 10px;
-    color: white;
-    font-size: 14px;
+    color: transparent;
+    font-size: 18px;
+    -webkit-text-stroke: 1.5px yellow;
     transition: color 0.2s;
   }
   
-  .document-item .icons i:hover {
-    color: #ffe680;
+  .document-item .icons i.active {
+    color: yellow;
+    -webkit-text-stroke: 0;
   }
   
+  .document-item .icons .fa-trash {
+    color: black;
+    -webkit-text-stroke: 0;
+  }
   
+   
