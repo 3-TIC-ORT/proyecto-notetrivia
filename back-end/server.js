@@ -16,7 +16,7 @@ const io = new Server(server, {
 });
   
 
-app.use(express.static(path.join(__dirname, "..", "front-end")));
+app.use(express.static(path.join(__dirname, "..", "front-end",)));
 let usuarios = JSON.parse(fs.readFileSync("usuarios.json"));
 let proximoid = Object.values(usuarios).reduce((max, u) => Math.max(max, u.id), 0) + 1;
 io.on("connection", (socket) => {
