@@ -20,7 +20,9 @@
         <li><i class="fas fa-users"></i> Compartido conmigo</li>
       </ul>
       <ul class="menu-bottom">
-        <li><i class="fas fa-user-circle"></i> Mi Perfil</li>
+        <li id="perfil-btn">
+          <i class="fas fa-user-circle"></i> Mi Perfil
+        </li>
         <li>
   <a href="configuracion.html">
     <i class="fas fa-cog"></i> Configuración
@@ -81,8 +83,36 @@
       star.classList.toggle('active');
     });
   });
+
 </script>
 
+<div id="overlay">
+  <div id="popup">
+    <p>Contenido del perfil</p>
+  </div>
+  <a href="document.html">
+    <img src="./IMGS/Vector.png" class="flecha" alt="Volver">
+  </a>
+
+  <script> 
+  
+  const perfilBtn = document.getElementById('perfil-btn');
+    const overlay = document.getElementById('overlay');
+    
+    perfilBtn.addEventListener('click', () => {
+      overlay.style.display = 'flex';
+    });
+    
+    // Cerrar al hacer clic fuera del popup
+    overlay.addEventListener('click', (e) => {
+      const popup = document.getElementById('popup');
+      if (!popup.contains(e.target) && e.target !== popup) {
+        overlay.style.display = 'none';
+      }
+    });
+    
+    </script>
+</div>
 </body>
 </html>
 

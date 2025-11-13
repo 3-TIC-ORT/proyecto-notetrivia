@@ -172,3 +172,39 @@ html, body {
   gap: 8px;
   width: 100%;
 }
+
+.flecha {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 30px;
+  height: 38px;
+  cursor: pointer;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  background-color: rgba(0,0,0,0.2);
+  display: none; /* inicialmente oculto */
+  justify-content: center;
+  align-items: center;
+  z-index: 2000; /* arriba del sidebar y buscador */
+}
+
+/* Popup centrado */
+#popup {
+  background: #86E3CE;
+  padding: 20px;
+  border-radius: 0px;
+  display: flex;
+  justify-content: center;
+  z-index: 2100; /* arriba del overlay */
+  width:400px;
+  height: 800px;
+}
+
