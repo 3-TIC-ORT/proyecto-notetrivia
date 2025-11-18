@@ -610,10 +610,8 @@ window.addEventListener("load", () => {
     roomMUESTRA.textContent = docId;
     document.getElementById("usuario").textContent = user;
 
-    // 🔒 evita loop
     let updatingFromServer = false;
 
-    // 🔄 detecta cambios reales
     let lastContent = "";
 
     socket.emit("unirse", { docId, user });
@@ -633,14 +631,13 @@ window.addEventListener("load", () => {
     });
 
     editorr.on("update", () => {
-        if (updatingFromServer) return;  // ← evita loops
+        if (updatingFromServer) return; 
 
         const html = editorr.getHTML();
 
-        // si no hubo cambios reales, no enviar nada
         if (html === lastContent) return;
 
-        lastContent = html; // guardamos último contenido enviado
+        lastContent = html; 
 
         socket.emit("editDocument", {
             docId,
