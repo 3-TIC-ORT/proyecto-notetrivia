@@ -1,37 +1,14 @@
 {
-  "12343456": {
+  "jose": {
     "id": 1,
-    "password": "123153151",
-    "username": "12343456"
+    "password": "josejose",
+    "username": "jose",
+    "intervalo": 10
   },
-  "123434566": {
+  "tania": {
     "id": 2,
-    "password": "123153151",
-    "username": "123434566"
-  },
-  "cocobarce": {
-    "id": 3,
-    "password": "123446",
-    "username": "cocobarce"
-  },
-  "perroperrisimo": {
-    "id": 4,
-    "password": "elperro",
-    "username": "perroperrisimo"
-  },
-  "cocobarce2": {
-    "id": 5,
-    "password": "123456",
-    "username": "cocobarce2"
-  },
-  "uma": {
-    "id": 6,
-    "password": "umauma",
-    "username": "uma"
-  },
-  "enrique": {
-    "id": 7,
-    "password": "mamerto",
-    "username": "enrique"
+    "password": "taniatania",
+    "username": "tania",
+    "intervalo": 10
   }
 }

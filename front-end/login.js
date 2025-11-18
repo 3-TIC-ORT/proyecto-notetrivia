@@ -9,7 +9,7 @@ function guardar(e) {
 }
 socket.on("login-exito", (data) => {
     alert(data.mensaje);
-    window.location.href = "ingresos.html";
+    window.location.href = "document.html";
     
 });
 socket.on("userDEV", (data) => {

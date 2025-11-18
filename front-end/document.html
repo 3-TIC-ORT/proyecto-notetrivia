@@ -54,13 +54,8 @@
       <button id="volver-crear" class="volver-crear" aria-label="Volver">←</button>
 
       <div class="crear-item">
-        <input type="text" placeholder="Unirse con código" />
-        <button class="btn-rojo">Unirse</button>
-      </div>
-
-      <div class="crear-item">
-        <input type="text" placeholder="Crear nuevo proyecto" />
-        <button class="btn-rojo">Crear</button>
+        <input type="text" placeholder="Crear/unirse" id="inputtt" />
+        <button class="btn-rojo" id="btn-rojo">Crear</button>
       </div>
     </div>
   </div>
@@ -131,21 +126,6 @@ document.getElementById("logout-btn").addEventListener("click", () => {
 document.getElementById("cerrar-sesion-btn").addEventListener("click", () => {
   window.location.href = "index.html";
 });
-
-const overlayCrear = document.getElementById("overlay-crear");
-const btnCrear = document.getElementById("btn-crear");
-
-btnCrear.addEventListener("click", () => {
-  overlayCrear.style.display = "flex";
-});
-
-// cerrar haciendo click afuera
-overlayCrear.addEventListener("click", (e) => {
-  if (e.target === overlayCrear) {
-    overlayCrear.style.display = "none";
-  }
-});
-
 const btnCrear = document.getElementById("btn-crear");
 const crearPanel = document.getElementById("crear-panel");
 const volverCrear = document.getElementById("volver-crear");
@@ -155,13 +135,11 @@ btnCrear.addEventListener("click", () => {
   crearPanel.setAttribute("aria-hidden", "false");
 });
 
-// cerrar con flecha
 volverCrear.addEventListener("click", () => {
   crearPanel.style.display = "none";
   crearPanel.setAttribute("aria-hidden", "true");
 });
 
-// cerrar haciendo click fuera del popup (dentro de .content)
 crearPanel.addEventListener("click", (e) => {
   if (e.target === crearPanel) {
     crearPanel.style.display = "none";
@@ -169,7 +147,7 @@ crearPanel.addEventListener("click", (e) => {
   }
 });
 </script>
-
+<script src="ingresos.js"></script>
 
 </body>
 </html>
