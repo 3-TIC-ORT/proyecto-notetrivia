@@ -32,7 +32,8 @@ io.on("connection", (socket) => {
       usuarios[data.user] = {
         id: proximoid,
         password: data.password,
-        username: data.user
+        username: data.user,
+        intervalo: 10
       }
       proximoid++;
       socket.emit("registro-exito", { mensaje: "Usuario registrado con éxito" });
@@ -58,8 +59,13 @@ io.on("connection", (socket) => {
       
     
 });
-
+  socket.on("intervalo", (data) => {
+    let danonino = data * 10000
+    usuarios[user].intervalo = danonino;
+    fs.writeFileSync("usuarios.json", JSON.stringify(usuarios, null, 2))
+     })
     });
+  
 setupcolaborativo(io);
 server.listen(3000, () => {
   console.log("Servidor corriendo en http://localhost:3000");
