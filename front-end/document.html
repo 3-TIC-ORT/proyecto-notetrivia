@@ -107,7 +107,9 @@
   <button class="mini-btn">Tomar foto</button>
 </div>
  
-<script> document.getElementById("perfil-btn").addEventListener("click", () => {
+<script> 
+
+document.getElementById("perfil-btn").addEventListener("click", () => {
   document.getElementById("overlay").style.display = "block";
   document.getElementById("perfil-popup").style.display = "flex";
 });
@@ -132,19 +134,6 @@ document.getElementById("cerrar-sesion-btn").addEventListener("click", () => {
   window.location.href = "index.html";
 });
 
-const overlayCrear = document.getElementById("overlay-crear");
-const btnCrear = document.getElementById("btn-crear");
-
-btnCrear.addEventListener("click", () => {
-  overlayCrear.style.display = "flex";
-});
-
-// cerrar haciendo click afuera
-overlayCrear.addEventListener("click", (e) => {
-  if (e.target === overlayCrear) {
-    overlayCrear.style.display = "none";
-  }
-});
 
 const btnCrear = document.getElementById("btn-crear");
 const crearPanel = document.getElementById("crear-panel");
