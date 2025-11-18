@@ -3,12 +3,9 @@
     "id": 1,
     "password": "josejose",
     "username": "jose",
-    "intervalo": 10
-  },
-  "tania": {
-    "id": 2,
-    "password": "taniatania",
-    "username": "tania",
-    "intervalo": 10
+    "intervalo": 10,
+    "rooms": [
+      "mimi"
+    ]
   }
 }

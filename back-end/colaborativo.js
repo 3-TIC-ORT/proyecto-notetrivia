@@ -3,7 +3,7 @@ import fs from "fs";
 const docsPath = "./docs";
 
 let rooms = {};
-
+let usuarios = JSON.parse(fs.readFileSync("usuarios.json"));
 function cargarDoc(docId) {
   const file = docsPath + "/" + docId + ".json";
   let doc;
@@ -29,7 +29,10 @@ export function setupcolaborativo(io) {
       const docId = data.docId;
       const user = data.user;
       socket.join(docId);
-
+   if (!usuarios[user].rooms.includes(docId)){
+    usuarios[user].rooms.push(docId);
+    fs.writeFileSync("usuarios.json", JSON.stringify(usuarios, null, 2));
+   }
       if (!rooms[docId]) rooms[docId] = [];
       if (user !== undefined && !rooms[docId].includes(user)) {
         rooms[docId].push(user);

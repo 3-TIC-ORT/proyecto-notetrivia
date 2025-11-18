@@ -33,7 +33,9 @@ io.on("connection", (socket) => {
         id: proximoid,
         password: data.password,
         username: data.user,
-        intervalo: 10
+        intervalo: 10,
+        rooms: [],
+        favoritos: []
       }
       proximoid++;
       socket.emit("registro-exito", { mensaje: "Usuario registrado con éxito" });
