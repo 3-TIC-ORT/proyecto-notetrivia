@@ -273,9 +273,7 @@ html, body {
   background: rgba(126, 94, 94, 0.1);
 }
 /* make .content a positioning context so overlay sits only inside it */
-.content {
-  position: relative;
-}
+
 .content {
   position: relative;
 }
