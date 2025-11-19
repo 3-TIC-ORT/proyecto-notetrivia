@@ -615,6 +615,7 @@ window.addEventListener("load", () => {
     let lastContent = "";
 
     socket.emit("unirse", { docId, user });
+    console.log("Solicitando documento:", docId);
 
     socket.on("loadDocument", (content) => {
         updatingFromServer = true;
@@ -648,6 +649,7 @@ window.addEventListener("load", () => {
 });
 
 </script>
+
 </body>
 </html>
 
