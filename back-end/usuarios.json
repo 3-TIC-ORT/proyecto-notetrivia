@@ -5,20 +5,28 @@
     "username": "jose",
     "intervalo": 10,
     "rooms": [
-      "mimi",
-      "okokok",
-      "ijijij",
-      "HOLAAAA"
-    ]
+      "omom",
+      "dad",
+      "Congreso de viena"
+    ],
+    "favoritos": []
   },
-  "bobe": {
+  "perroperrisimo": {
     "id": 2,
-    "password": "bobe1234",
-    "username": "bobe",
+    "password": "elperro",
+    "username": "perroperrisimo",
+    "intervalo": 10,
+    "rooms": [],
+    "favoritos": []
+  },
+  "tania": {
+    "id": 3,
+    "password": "josejose",
+    "username": "tania",
     "intervalo": 10,
     "rooms": [
-      "estudio tora",
-      "mmm"
+      "Congreso de viena",
+      "congreso de viena"
     ],
     "favoritos": []
   }
