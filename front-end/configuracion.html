@@ -21,41 +21,12 @@
   </header>
 
   <main class="content">
-    <!-- Fila de intervalo -->
-    <div class="setting-row">
-      <p class="p2">Intervalo de guardado en segundos</p>
-
-      <div class="intervalo-control">
-        <span class="min">30</span>
-        <div class="slider-container">
-          <input type="range" id="intervalo" min="30" max="90" value="32" />
-          <div class="tooltip" id="valor">32</div>
-        </div>
-        <span class="max">90</span>
-      </div>
-    </div>
 
     <!-- Otros textos -->
     <p class="p3">Ayuda</p>
     <p class="p4">Historial de versiones</p>
   </main>
 
-  <script>
-    const range = document.getElementById("intervalo");
-    const tooltip = document.getElementById("valor");
-
-    function updateTooltip() {
-      const min = +range.min;
-      const max = +range.max;
-      const val = +range.value;
-      tooltip.textContent = val;
-      const percent = ((val - min) / (max - min)) * 100;
-      tooltip.style.left = percent + '%';
-    }
-
-    range.addEventListener('input', updateTooltip);
-    window.addEventListener('resize', updateTooltip);
-    updateTooltip();
-  </script>
+  <script>  </script>
 </body>
 </html>
