@@ -622,7 +622,7 @@ window.addEventListener("load", () => {
         lastContent = content;
         updatingFromServer = false;
     });
-
+    
     socket.on("updateDocument", (newContent) => {
         updatingFromServer = true;
         editorr.commands.setContent(newContent);

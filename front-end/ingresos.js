@@ -1,7 +1,13 @@
-    const btnentrada = document.getElementById('btn-rojo')
+   const socket = io("http://localhost:3000");
+ const btnentrada = document.getElementById('btn-rojo')
     const roomInput = document.getElementById('inputtt')
+    let user = localStorage.getItem("userDEV")
+   let lista = []
+    socket.emit("cargarNORMAL", {user})
+    socket.on("cargar1", (data) => {
+        console.log(data)
+      })
 
-        
     function envio() {
       const docId = roomInput.value
 

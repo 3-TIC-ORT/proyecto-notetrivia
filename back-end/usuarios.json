@@ -5,7 +5,21 @@
     "username": "jose",
     "intervalo": 10,
     "rooms": [
-      "mimi"
+      "mimi",
+      "okokok",
+      "ijijij",
+      "HOLAAAA"
     ]
+  },
+  "bobe": {
+    "id": 2,
+    "password": "bobe1234",
+    "username": "bobe",
+    "intervalo": 10,
+    "rooms": [
+      "estudio tora",
+      "mmm"
+    ],
+    "favoritos": []
   }
 }

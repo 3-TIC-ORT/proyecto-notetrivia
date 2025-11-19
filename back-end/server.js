@@ -20,6 +20,12 @@ app.use(express.static(path.join(__dirname, "..", "front-end",)));
 let usuarios = JSON.parse(fs.readFileSync("usuarios.json"));
 let proximoid = Object.values(usuarios).reduce((max, u) => Math.max(max, u.id), 0) + 1;
 io.on("connection", (socket) => {
+    socket.on("cargarNORMAL", (data) => {
+    let usuarios2 = JSON.parse(fs.readFileSync("usuarios.json"));
+    socket.emit("cargar1", {rooms: usuarios2[data.user].rooms})
+   
+})
+  
   console.log("papu conectado");
   socket.on("registro", (data) => {
     if (usuarios[data.user]) {
