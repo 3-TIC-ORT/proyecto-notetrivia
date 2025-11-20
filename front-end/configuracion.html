@@ -24,9 +24,45 @@
 
     <!-- Otros textos -->
     <p class="p3">Ayuda</p>
+    <div id="panel-info" class="panel oculto">
+      <h2>¿Cómo funciona esta aplicación?</h2>
+      <p>
+        Esta aplicación te permite tomar apuntes de manera rápida y sencilla.
+        Después de escribir tus notas, la app genera preguntas basadas en el contenido que
+        ingresaste para ayudarte a repasar y consolidar lo aprendido. Las preguntas pueden
+        ser de opción múltiple, verdadero o falso, o respuesta corta, y están diseñadas 
+        para evaluar tu comprensión de manera interactiva.
+      </p>
+    </div>
     <p class="p4">Historial de versiones</p>
+    <div id="panel-info" class="panel oculto">
+      <h2>Historial de versiones</h2>
+      <p>
+        Lanzamiento 30 Noviembre de 2025
+        Todavia no hay actualizaciones
+      </p>
+    </div>
   </main>
 
-  <script>  </script>
+  <script>
+    const ayuda = document.querySelector(".p3");
+    const historial = document.querySelector(".p4");
+    const panel = document.getElementById("panel-info");
+  
+    ayuda.addEventListener("click", () => {
+      panel.classList.remove("oculto");
+      panel.querySelector("h2").textContent = "¿Cómo funciona esta aplicación?";
+      panel.querySelector("p").textContent = "Esta aplicación te permite tomar apuntes de manera rápida y sencilla. Después de escribir tus notas, la app genera preguntas basadas en el contenido que has ingresado para ayudarte a repasar y consolidar lo aprendido. Las preguntas pueden ser de opción múltiple, verdadero o falso, o de respuesta corta, y están diseñadas para que puedas evaluar tu comprensión de manera interactiva."
+  
+    });
+  
+    historial.addEventListener("click", () => {
+      panel.classList.remove("oculto");
+      panel.querySelector("h2").textContent = "Historial de versiones";
+      panel.querySelector("p").textContent =
+        "Lanzamiento 30 Noviembre de 2025. Todavia no hay actualizaciones.";
+    });
+  </script>
+  
 </body>
 </html>
