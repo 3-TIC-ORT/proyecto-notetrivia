@@ -1,48 +1,48 @@
 {
   "trivia": [
     {
-      "pregunta": "¿Cuál es el principal objetivo de la ingeniería genética?",
+      "pregunta": "¿Qué tipo de motor utilizan los autos eléctricos?",
       "opciones": [
-        { "texto": "Modificar el ADN de un organismo para cambiar sus características o agregarle nuevas funciones", "correcta": true },
-        { "texto": "Estudiar la evolución de las especies", "correcta": false },
-        { "texto": "Crear nuevos tipos de energía", "correcta": false },
-        { "texto": "Desarrollar tecnologías de comunicación", "correcta": false }
+        { "texto": "Gasolina", "correcta": false },
+        { "texto": "Diésel", "correcta": false },
+        { "texto": "Baterías recargables", "correcta": true },
+        { "texto": "Híbrido", "correcta": false }
       ]
     },
     {
-      "pregunta": "¿Qué herramienta se utiliza comúnmente para cortar y unir genes en la ingeniería genética?",
+      "pregunta": "¿Cuál es la función principal del chasis en un auto?",
       "opciones": [
-        { "texto": "Enzimas", "correcta": true },
-        { "texto": "Antibióticos", "correcta": false },
-        { "texto": "Hormonas", "correcta": false },
-        { "texto": "Vacunas", "correcta": false }
+        { "texto": "Proteger a los ocupantes", "correcta": false },
+        { "texto": "Sostener todas las partes del vehículo", "correcta": true },
+        { "texto": "Absorber irregularidades del camino", "correcta": false },
+        { "texto": "Controlar el rumbo del auto", "correcta": false }
       ]
     },
     {
-      "pregunta": "¿Cuál es un ejemplo de aplicación de la ingeniería genética en medicina?",
+      "pregunta": "¿Qué sistema de seguridad activa ayuda a evitar colisiones?",
       "opciones": [
-        { "texto": "Producción de insulina", "correcta": true },
-        { "texto": "Desarrollo de teléfonos inteligentes", "correcta": false },
-        { "texto": "Creación de combustibles fósiles", "correcta": false },
-        { "texto": "Fabricación de automóviles", "correcta": false }
+        { "texto": "Cinturones de seguridad", "correcta": false },
+        { "texto": "Airbags", "correcta": false },
+        { "texto": "Sensores de asistencia al conductor", "correcta": true },
+        { "texto": "Frenos antibloqueo", "correcta": false }
       ]
     },
     {
-      "pregunta": "¿Qué tipo de organismos se modifican para producir cultivos resistentes a plagas?",
+      "pregunta": "¿Qué tipo de auto es ideal para ciudades por su tamaño reducido?",
       "opciones": [
-        { "texto": "Plantas", "correcta": true },
-        { "texto": "Animales", "correcta": false },
-        { "texto": "Hongos", "correcta": false },
-        { "texto": "Bacterias", "correcta": false }
+        { "texto": "Sedán", "correcta": false },
+        { "texto": "Camioneta", "correcta": false },
+        { "texto": "Auto compacto", "correcta": true },
+        { "texto": "SUV", "correcta": false }
       ]
     },
     {
-      "pregunta": "¿Cuál es un riesgo potencial de la ingeniería genética mencionado en el texto?",
+      "pregunta": "¿Qué tecnología está impulsando el desarrollo de autos autónomos?",
       "opciones": [
-        { "texto": "Posibles efectos en el ambiente", "correcta": true },
-        { "texto": "Aumento de la productividad industrial", "correcta": false },
-        { "texto": "Reducción de enfermedades infecciosas", "correcta": false },
-        { "texto": "Mejora de la calidad del aire", "correcta": false }
+        { "texto": "Sistemas de navegación", "correcta": false },
+        { "texto": "Pantallas táctiles", "correcta": false },
+        { "texto": "Inteligencia artificial", "correcta": true },
+        { "texto": "Conectividad con dispositivos móviles", "correcta": false }
       ]
     }
   ]

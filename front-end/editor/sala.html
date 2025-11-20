@@ -352,6 +352,185 @@ padding-right: 0;
 margin-right: 4px;
 }
 }
+
+/* BOTÓN QUIZ FLOTANTE */
+.quiz-button {
+position: fixed;
+bottom: 30px;
+right: 30px;
+background: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%);
+color: white;
+border: none;
+border-radius: 25px;
+padding: 12px 28px;
+font-size: 16px;
+font-weight: 600;
+cursor: pointer;
+box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+transition: all 0.3s ease;
+z-index: 1000;
+}
+
+.quiz-button:hover {
+transform: translateY(-2px);
+box-shadow: 0 6px 20px rgba(255, 107, 157, 0.6);
+}
+
+/* VENTANA FLOTANTE DEL QUIZ */
+.quiz-overlay {
+display: none;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.5);
+z-index: 2000;
+justify-content: center;
+align-items: center;
+}
+
+.quiz-overlay.active {
+display: flex;
+}
+
+.quiz-container {
+background: white;
+border-radius: 20px;
+padding: 40px;
+max-width: 800px;
+width: 90%;
+box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+from {
+transform: translateY(-50px);
+opacity: 0;
+}
+to {
+transform: translateY(0);
+opacity: 1;
+}
+}
+
+.quiz-header {
+background: linear-gradient(135deg, #5fcad8 0%, #4fb3c1 100%);
+border-radius: 12px;
+padding: 40px;
+margin-bottom: 30px;
+text-align: center;
+}
+
+.quiz-question {
+font-size: 24px;
+font-weight: 600;
+color: #202124;
+margin: 0;
+}
+
+.quiz-options {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 15px;
+margin-bottom: 20px;
+}
+
+.quiz-option {
+background: linear-gradient(135deg, #ff8fab 0%, #ff9eb8 100%);
+color: white;
+border: none;
+border-radius: 12px;
+padding: 20px;
+font-size: 16px;
+font-weight: 500;
+cursor: pointer;
+transition: all 0.3s ease;
+text-align: center;
+box-shadow: 0 2px 8px rgba(255, 143, 171, 0.3);
+}
+
+.quiz-option:hover {
+transform: translateY(-3px);
+box-shadow: 0 4px 12px rgba(255, 143, 171, 0.5);
+}
+
+.quiz-option.correct {
+background: linear-gradient(135deg, #4caf50 0%, #66bb6a 100%);
+}
+
+.quiz-option.incorrect {
+background: linear-gradient(135deg, #f44336 0%, #e57373 100%);
+}
+
+.quiz-option.disabled {
+cursor: not-allowed;
+opacity: 0.7;
+}
+
+.quiz-actions {
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 25px;
+}
+
+.quiz-close {
+background: #e0e0e0;
+color: #202124;
+border: none;
+border-radius: 20px;
+padding: 10px 24px;
+font-size: 14px;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.2s ease;
+}
+
+.quiz-close:hover {
+background: #bdbdbd;
+}
+
+.quiz-next {
+background: linear-gradient(135deg, #ff6b9d 0%, #ff8fab 100%);
+color: white;
+border: none;
+border-radius: 20px;
+padding: 10px 24px;
+font-size: 14px;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.2s ease;
+box-shadow: 0 2px 8px rgba(255, 107, 157, 0.3);
+}
+
+.quiz-next:hover {
+transform: translateY(-1px);
+box-shadow: 0 4px 12px rgba(255, 107, 157, 0.5);
+}
+
+.quiz-counter {
+font-size: 14px;
+color: #5f6368;
+font-weight: 500;
+}
+
+.quiz-score {
+text-align: center;
+margin-top: 20px;
+}
+
+.quiz-score h2 {
+color: var(--accent);
+font-size: 28px;
+margin-bottom: 10px;
+}
+
+.quiz-score p {
+font-size: 16px;
+color: var(--text-muted);
+}
 </style>
 </head>
 <body>
@@ -436,6 +615,30 @@ Compartir
 <div class="tiptap"></div>
 </div>
 </main>
+
+<!-- BOTÓN QUIZ -->
+<button class="quiz-button" id="botonquiz">quiz</button>
+
+<!-- VENTANA FLOTANTE DEL QUIZ -->
+<div class="quiz-overlay" id="quizOverlay">
+<div class="quiz-container">
+<div class="quiz-header">
+<p class="quiz-question" id="quizQuestion">pregunta</p>
+</div>
+<div class="quiz-options" id="quizOptions">
+<button class="quiz-option">Opcion 1</button>
+<button class="quiz-option">Opcion 2</button>
+<button class="quiz-option">Opcion 3</button>
+<button class="quiz-option">Opcion 4</button>
+</div>
+<div class="quiz-actions">
+<button class="quiz-close" onclick="closeQuiz()">Cerrar</button>
+<div class="quiz-counter" id="quizCounter">1 / 5</div>
+<button class="quiz-next" id="quizNext" onclick="nextQuestion()">Siguiente</button>
+</div>
+<div class="quiz-score" id="quizScore" style="display: none;"></div>
+</div>
+</div>
 </div>
 
 <script type="module">
@@ -588,14 +791,22 @@ headingSelect.value = 'h3';
 headingSelect.value = 'paragraph';
 }
 
-syncColorSample();
+    syncColorSample();
 }
+
+// Asignar editor globalmente
 window.tiptapEditor = editor;
+
 // Inicializar barra
 updateToolbar();
+
 const socket = io("http://localhost:3000");
 
-window.addEventListener("load", () => {
+// Hacer socket accesible globalmente para el quiz
+window.appSocket = socket;
+
+// Esperar a que el editor esté completamente listo
+setTimeout(() => {
     const editorr = window.tiptapEditor;
     const roomMUESTRA = document.getElementById("ROOMname");
 
@@ -618,26 +829,49 @@ window.addEventListener("load", () => {
     console.log("Solicitando documento:", docId);
 
     socket.on("loadDocument", (content) => {
+        console.log("Recibiendo loadDocument");
         updatingFromServer = true;
-        editorr.commands.setContent(content);
-        lastContent = content;
-        updatingFromServer = false;
+        
+        // Solo actualizar si el contenido es diferente
+        if (content !== lastContent) {
+            editorr.commands.setContent(content || "");
+            lastContent = content || "";
+        }
+        
+        setTimeout(() => {
+            updatingFromServer = false;
+        }, 50);
     });
     
     socket.on("updateDocument", (newContent) => {
+        console.log("Recibiendo updateDocument");
         updatingFromServer = true;
-        editorr.commands.setContent(newContent);
-        lastContent = newContent;
-        updatingFromServer = false;
+        
+        // Solo actualizar si el contenido es diferente
+        if (newContent !== lastContent) {
+            editorr.commands.setContent(newContent || "");
+            lastContent = newContent || "";
+        }
+        
+        setTimeout(() => {
+            updatingFromServer = false;
+        }, 50);
     });
 
     editorr.on("update", () => {
-        if (updatingFromServer) return; 
+        if (updatingFromServer) {
+            console.log("Ignorando update porque viene del servidor");
+            return;
+        }
 
         const html = editorr.getHTML();
 
-        if (html === lastContent) return;
+        if (html === lastContent) {
+            console.log("Contenido igual, no se envía");
+            return;
+        }
 
+        console.log("Enviando cambio al servidor");
         lastContent = html; 
 
         socket.emit("editDocument", {
@@ -646,10 +880,42 @@ window.addEventListener("load", () => {
             content: html
         });
     });
-});
+}, 100);
+
+function getSelectedText() {
+  const { from, to } = editor.state.selection;
+  return editor.state.doc.textBetween(from, to, "\n");
+}
+// ============ FUNCIONALIDAD DEL QUIZ ============
+    let botonquiz = document.getElementById("botonquiz");
+
+
+   botonquiz.addEventListener("click", () => {
+    const seleccionado = getSelectedText();
+    if (!seleccionado || seleccionado.trim() === "") {
+        alert("Por favor, selecciona un texto para generar el quiz.");
+        return;
+    } 
+    else if (seleccionado.trim().length < 20) {
+        alert("Por favor, selecciona un texto más largo para generar el quiz.");
+        return;
+    }
+    else {
+    socket.emit("generartrivia", seleccionado);
+    }
+   });
+
+    // Escuchar trivia generada
+   socket.on("trivia-generada", (data) => {
+       console.log("Trivia generada:", data);
+    });
+
+
+
+
+
 
 </script>
 
 </body>
 </html>
-

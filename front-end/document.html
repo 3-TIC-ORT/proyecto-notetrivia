@@ -15,9 +15,9 @@
       <h2><i class="fas fa-home"></i> Inicio</h2>
       <ul class="menu">
         <li id="btn-crear"><i class="fas fa-plus"></i> Crear</li>
-        <li><i class="fas fa-heart"></i> Favoritos</li>
-        <li><i class="fa-solid fa-file"></i>Documentos</li>
-        <li><i class="fas fa-trash"></i> Eliminados</li>
+        <li id="btn-fav"><i class="fas fa-heart"></i> Favoritos</li>
+        <li id="btn-doc"><i class="fa-solid fa-file"></i>Documentos</li>
+        <li id="btn-del"><i class="fas fa-trash"></i> Eliminados</li>
       
       </ul>
 <ul class="menu-bottom">
@@ -94,6 +94,7 @@
  
 <script> 
 
+
 document.getElementById("perfil-btn").addEventListener("click", () => {
   document.getElementById("overlay").style.display = "block";
   document.getElementById("perfil-popup").style.display = "flex";
@@ -141,4 +142,3 @@ crearPanel.addEventListener("click", (e) => {
 
 </body>
 </html>
-

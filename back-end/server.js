@@ -5,6 +5,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { setupcolaborativo } from "./colaborativo.js";
+import { funcionn } from "./Quiz.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -27,6 +28,14 @@ io.on("connection", (socket) => {
 })
   
   console.log("papu conectado");
+  socket.on("generartrivia", (data) => {
+    
+    let input = data;
+    funcionn(socket, input)
+    console.log(data + " este es el seleccionado");
+    
+});
+  
   socket.on("registro", (data) => {
     if (usuarios[data.user]) {
       socket.emit("registro-error", { mensaje: "El usuario ya existe" });
@@ -73,7 +82,7 @@ io.on("connection", (socket) => {
     fs.writeFileSync("usuarios.json", JSON.stringify(usuarios, null, 2))
      })
     });
-  
+    
 setupcolaborativo(io);
 server.listen(3000, () => {
   console.log("Servidor corriendo en http://localhost:3000");

@@ -7,7 +7,8 @@
     "rooms": [
       "omom",
       "dad",
-      "Congreso de viena"
+      "Congreso de viena",
+      "papoi"
     ],
     "favoritos": []
   },
@@ -16,7 +17,9 @@
     "password": "elperro",
     "username": "perroperrisimo",
     "intervalo": 10,
-    "rooms": [],
+    "rooms": [
+      "tania"
+    ],
     "favoritos": []
   },
   "tania": {
@@ -26,7 +29,18 @@
     "intervalo": 10,
     "rooms": [
       "Congreso de viena",
-      "congreso de viena"
+      "congreso de viena",
+      "papoi"
+    ],
+    "favoritos": []
+  },
+  "marinadawi": {
+    "id": 4,
+    "password": "marina",
+    "username": "marinadawi",
+    "intervalo": 10,
+    "rooms": [
+      "joda"
     ],
     "favoritos": []
   }
