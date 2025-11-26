@@ -43,5 +43,13 @@
       "joda"
     ],
     "favoritos": []
+  },
+  "dante": {
+    "id": 5,
+    "password": "josejose",
+    "username": "dante",
+    "intervalo": 10,
+    "rooms": [],
+    "favoritos": []
   }
 }

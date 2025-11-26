@@ -858,7 +858,7 @@ setTimeout(() => {
         }, 50);
     });
 
-    editorr.on("update", () => {
+    editorr.on("blur", () => {
         if (updatingFromServer) {
             console.log("Ignorando update porque viene del servidor");
             return;

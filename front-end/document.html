@@ -15,16 +15,11 @@
       <h2><i class="fas fa-home"></i> Inicio</h2>
       <ul class="menu">
         <li id="btn-crear"><i class="fas fa-plus"></i> Crear</li>
-<<<<<<< HEAD
+
         <li id="btn-fav"><i class="fas fa-heart"></i> Favoritos</li>
         <li id="btn-doc"><i class="fa-solid fa-file"></i>Documentos</li>
         <li id="btn-del"><i class="fas fa-trash"></i> Eliminados</li>
-=======
-        <li ><i class="fas fa-heart"></i> Favoritos</li>
-        <li><i class="fa-solid fa-file"></i>Documentos</li>
-        <li><i class="fas fa-trash"></i> Eliminados</li>
->>>>>>> d4e2f5e6a95a67a2d9d5bd9e4596dad12bacc301
-      
+
       </ul>
 <ul class="menu-bottom">
   <li id="perfil-btn">
@@ -47,13 +42,11 @@
 
   <div class="document-list">
   </div>
-
-  <!-- === PANEL CREAR: OCULTO POR DEFECTO y DENTRO DE .content (NO tapa la sidebar) === -->
   <div id="crear-panel" aria-hidden="true">
-    <!-- fondo amarillo que ocupa SOLO el area de content -->
+    
     <div class="crear-fondo"></div>
 
-    <!-- caja celeste -->
+
     <div class="crear-popup">
       <button id="volver-crear" class="volver-crear" aria-label="Volver">←</button>
 
@@ -81,13 +74,11 @@
 
   <h3>Agregar foto de perfil</h3>
 
-  <p>Nombre</p>
-  <p>Apellido</p>
-  <p>Edad</p>
-  <p>Última vez que se usó la aplicación</p>
+  <p>Mail</p>
+  <p>Contraseña</p>
   <p>Porcentaje de respuestas correctas</p>
   <p>Número de notas creadas</p>
-  <p>Última vez que se usó la aplicación</p>
+  
 
   <button class="boton-rojo" id="logout-btn">Cambiar cuenta</button>
   <button class="boton-rojo" id="cerrar-sesion-btn">Cerrar sesión</button>
@@ -106,7 +97,7 @@ document.getElementById("perfil-btn").addEventListener("click", () => {
   document.getElementById("perfil-popup").style.display = "flex";
 });
 
-// Cerrar tocando afuera
+
 document.getElementById("overlay").addEventListener("click", () => {
   document.getElementById("overlay").style.display = "none";
   document.getElementById("perfil-popup").style.display = "none";
