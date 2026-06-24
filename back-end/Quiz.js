@@ -6,20 +6,36 @@ export function funcionn(socket, input) {
 const cohere = new CohereClientV2({
   token: process.env.API,
 });
-const prompt = input + `: sos un generador de trivias adecuadas a este contenido. Tu objetivo es Genera una trivia de 5 preguntas con 4 opciones cada una en formato JSON. 
-La estructura debe ser:
+const prompt = `Sos un generador de trivias educativas. Basándote en el siguiente contenido, generá una trivia de 5 preguntas con 4 opciones cada una.
+
+CONTENIDO:
+${input}
+
+REGLAS OBLIGATORIAS:
+1. Cada pregunta debe tener un TIPO diferente. Usá exactamente estos 5 tipos, uno por pregunta:
+   - DEFINICIÓN: "¿Qué es / Qué significa...?"
+   - EJEMPLO: "¿Cuál de estos es un ejemplo de...?"
+   - RELACIÓN: "¿Qué relación existe entre X e Y?" o "¿Cómo se vincula X con Y?"
+   - APLICACIÓN: "¿En qué situación se aplicaría...?" o "¿Para qué sirve...?"
+   - VERDADERO/FALSO AMPLIADO: Una afirmación sobre el contenido donde hay que identificar si es correcta o incorrecta y por qué.
+2. Las preguntas deben cubrir ideas distintas del texto, no repetir el mismo concepto.
+3. Las opciones incorrectas deben ser plausibles, no obviamente falsas.
+4. Solo una opción debe ser correcta.
+
+Formato de respuesta (SOLO el JSON, sin explicaciones ni markdown):
 {
   "trivia": [
     {
       "pregunta": "string",
       "opciones": [
-        { "texto": "string", "correcta": true/false },
-        ...
+        { "texto": "string", "correcta": true },
+        { "texto": "string", "correcta": false },
+        { "texto": "string", "correcta": false },
+        { "texto": "string", "correcta": false }
       ]
     }
   ]
-}
-IMPORTANTE: Devuelve únicamente el JSON, sin explicaciones ni formato extra.`;
+}`;
 
 
 async function main() {
